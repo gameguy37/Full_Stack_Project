@@ -41,8 +41,8 @@ class LoginForm extends React.Component {
                     <input className="dropdown-login-btn" type="submit" value="Log in to Splitwise" />
                     <br/>
                     <span className="forgot-password">Forgot your password? <a href="#">Click here</a></span>
-                    <br/>
-                    <div className="alt-logins">Or log in with <a href="#">Facebook</a>/<a href="#" className="google-btn">Google</a></div>
+                    {/* <br/> */}
+                    {/* <div className="alt-logins">Or log in with <a href="#">Facebook</a>/<a href="#" className="google-btn">Google</a></div> */}
 
                 </form>
             </div>
