@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import LoginErrorsReducer from './entities/users_reducer';
-import FriendshipErrorsReducer from './entities/bills_reducer';
-import SessionErrorsReducer from './entities/payments_reducer';
+import SessionErrorsReducer from './errors/session_errors_reducer';
+import FriendshipsErrorsReducer from './errors/friendships_errors_reducer';
+import BillsErrorsReducer from './errors/bills_errors_reducer';
 
 export default combineReducers({
-    login: LoginErrorsReducer,
-    friendship: FriendshipErrorsReducer,
     session: SessionErrorsReducer,
+    friendships: FriendshipsErrorsReducer,
+    bills: BillsErrorsReducer,
 });
