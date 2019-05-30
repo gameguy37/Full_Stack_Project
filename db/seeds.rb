@@ -16,3 +16,10 @@ u7 = User.create(name: 'Rutherford the Brave', email: 'head-knight@gamehendge.co
 u8 = User.create(name: 'Mr. Palmer', email: 'accountant@gamehendge.com', password: 'password123')
 u9 = User.create(name: 'Wilson', email: 'king_of_prussia@gamehendge.com', password: 'password123')
 u10 = User.create(name: 'The Sloth', email: 'hitman@gamehendge.com', password: 'password123')
+
+f1 = Friendship.create(user_id: u1.id, friend_id: u2.id, accepted: false)
+f2 = Friendship.create(user_id: u1.id, friend_id: u3.id, accepted: true)
+f3 = Friendship.create(user_id: u1.id, friend_id: u4.id, accepted: true)
+f4 = Friendship.create(user_id: u1.id, friend_id: u5.id, accepted: true)
+f5 = Friendship.create(user_id: u1.id, friend_id: u6.id, accepted: true)
+f6 = Friendship.create(user_id: u1.id, friend_id: u7.id, accepted: true)

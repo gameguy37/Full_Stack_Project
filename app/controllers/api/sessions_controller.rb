@@ -1,9 +1,5 @@
 class Api::SessionsController < ApplicationController
 
-    def new
-        render :new
-    end
-
     def create
         @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
         if @user
@@ -17,9 +13,9 @@ class Api::SessionsController < ApplicationController
     def destroy
         if current_user
             logout
-            render json: {}
+            render json: {} ######
         else
-            render json: {}, status: 404
+            render json: {}, status: 404 ######
         end
     end
 

@@ -56,17 +56,6 @@ class LoginForm extends React.Component {
             <div>
                 <button onClick={this.showForm} className="header-login-btn">Log in</button>
                 {dropdownForm}
-                {/* <form className="login-form" onSubmit={this.handleSubmit}>
-                    
-                    <input type="text" value={this.state.email} onChange={this.change("email")} placeholder="Email address" />
-                    <br/>
-                    <input type="password" value={this.state.password} onChange={this.change("password")} placeholder="Password" />
-                    <br/>
-                    <input className="dropdown-login-btn" type="submit" value="Log in to Splitwise" />
-                    <br/>
-                    <span className="forgot-password">Forgot your password? <a href="#">Click here</a></span>
-
-                </form> */}
             </div>
         );
     }
