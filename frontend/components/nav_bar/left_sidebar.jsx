@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
 
 class LeftSidebar extends React.Component {
     constructor(props) {
@@ -10,14 +11,15 @@ class LeftSidebar extends React.Component {
             ui: { modal: null },
         };
 
-        this.activateModal = this.activateModal.bind(this);
+        // this.activateModal = this.activateModal.bind(this);
     }
 
-    activateModal() {
-        this.setState({
-            ui: { modal: 'newfriend' },
-        });
-    }
+    // activateModal() {
+    //     debugger
+    //     this.setState({
+    //         ui: { modal: 'newfriend' },
+    //     });
+    // }
 
 
     render() {
@@ -49,7 +51,7 @@ class LeftSidebar extends React.Component {
                         <div id="invite-box-fields">
                             <input id="invite-box-input" placeholder="Enter an email address"></input>
                             <br/>
-                            <button onClick={() => this.activateModal} id="invite-box-btn">Send invite</button>
+                            <button onClick={() => this.props.openModal('newfriend')} id="invite-box-btn">Send invite</button>
                         </div>
                     </div>
 

@@ -14,9 +14,6 @@ const Modal = ({ modal, closeModal }) => {
         case 'newfriend':
             component = <NewFriendContainer />;
             break;
-        // case 'signup':
-        //     component = <SignupFormContainer />;
-        //     break;
         default:
             return null;
     }

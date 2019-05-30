@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import LeftSidebar from './left_sidebar';
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
     return {
@@ -8,4 +9,8 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(LeftSidebar);
+const mapDispatchToProps = dispatch => ({
+    openModal: modal => dispatch(openModal(modal))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LeftSidebar);
