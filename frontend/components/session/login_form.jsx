@@ -8,15 +8,20 @@ class LoginForm extends React.Component {
         this.state = {
             email: '',
             password: '',
-            show: false, ///////
+            formOpen: false,
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.showForm = this.showForm.bind(this);
     }
 
-    // showForm() {
-    //     this.setState({show: true});
-    // }
+    showForm() {
+        if (this.state.formOpen) {
+            this.setState({formOpen: false});
+        } else {
+            this.setState({formOpen: true});
+        }
+    }
 
     change(field) {
         return e => {
@@ -30,10 +35,29 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        let dropdownForm;
+        if (this.state.formOpen) {
+            dropdownForm = (
+                <form className="login-form" onSubmit={this.handleSubmit}>
+                    <input type="text" value={this.state.email} onChange={this.change("email")} placeholder="Email address" />
+                    <br />
+                    <input type="password" value={this.state.password} onChange={this.change("password")} placeholder="Password" />
+                    <br />
+                    <input className="dropdown-login-btn" type="submit" value="Log in to Splitwise" />
+                    <br />
+                    <span className="forgot-password">Forgot your password? <a href="#">Click here</a></span>
+                </form>
+            );
+        } else {
+            dropdownForm = null;
+        }
+        
         return (
-            <div className="login-form">
-                <form onSubmit={this.handleSubmit}>
-                   
+            <div>
+                <button onClick={this.showForm} className="header-login-btn">Log in</button>
+                {dropdownForm}
+                {/* <form className="login-form" onSubmit={this.handleSubmit}>
+                    
                     <input type="text" value={this.state.email} onChange={this.change("email")} placeholder="Email address" />
                     <br/>
                     <input type="password" value={this.state.password} onChange={this.change("password")} placeholder="Password" />
@@ -41,10 +65,8 @@ class LoginForm extends React.Component {
                     <input className="dropdown-login-btn" type="submit" value="Log in to Splitwise" />
                     <br/>
                     <span className="forgot-password">Forgot your password? <a href="#">Click here</a></span>
-                    {/* <br/> */}
-                    {/* <div className="alt-logins">Or log in with <a href="#">Facebook</a>/<a href="#" className="google-btn">Google</a></div> */}
 
-                </form>
+                </form> */}
             </div>
         );
     }

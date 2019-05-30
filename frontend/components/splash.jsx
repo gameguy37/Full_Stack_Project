@@ -8,8 +8,9 @@ const Splash = () => (
             <div className="flex-box">
                 <span className="styled-name">IMAGE GOES HERE</span>
                 <nav className="nav-links">
-                    <button className="header-login-btn">Log in</button> or <Link to="/signup" className="header-signup-btn">Sign up</Link>
-                    <LoginForm />
+                    <LoginForm /> or <Link to="/signup" className="header-signup-btn">Sign up</Link>
+                    {/* <button className="header-login-btn">Log in</button> or <Link to="/signup" className="header-signup-btn">Sign up</Link> */}
+                    {/* <LoginForm /> */}
                 </nav>
             </div>
         
