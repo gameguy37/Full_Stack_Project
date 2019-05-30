@@ -3,7 +3,6 @@ import NavBar from './nav_bar';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
-    debugger
     return {
         user: state.entities.users[state.session.id],
     };

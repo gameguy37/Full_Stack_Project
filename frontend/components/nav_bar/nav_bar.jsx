@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import LeftSidebar from './left_sidebar_container';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -7,7 +8,6 @@ class NavBar extends React.Component {
     }
 
     render() {
-        debugger
         return (
             <>
                 <header className="nav-bar">
@@ -18,7 +18,7 @@ class NavBar extends React.Component {
                 </header>
                 <br/>
                 <section id="left-sidebar">
-
+                    <LeftSidebar />
                 </section>
                 <section id="center-box">
 
