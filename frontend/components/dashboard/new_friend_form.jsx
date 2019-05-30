@@ -20,7 +20,7 @@ class NewFriendForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.invite(this.state);
+        this.props.addFriend(this.state.invitee);
     }
 
     render() {
@@ -31,7 +31,7 @@ class NewFriendForm extends React.Component {
                     Invite friends
                     <span>X</span>
                     <br/>
-                    <input type="text" value={this.state.invitee} onChange={this.change("invitee")} placeholder="Enter names or email addresses" />
+                    <input type="text" value={this.state.invitee} onChange={this.change("invitee")} placeholder="Enter email address" />
                     <br />
                     <input type="textarea" value={this.state.message} onChange={this.change("message")} placeholder="Include an optional message" />
                     <br />

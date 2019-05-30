@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { invite } from '../../actions/dashboard_actions';
+import { addFriend } from '../../actions/dashboard_actions';
 import NewFriendForm from './new_friend_form';
 
 const mapDispatchToProps = dispatch => {
     return {
-        invite: (user) => dispatch(invite(user))
+        addFriend: (user) => dispatch(addFriend(user))
     };
 };
 
