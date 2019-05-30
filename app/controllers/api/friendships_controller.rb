@@ -3,9 +3,9 @@ class Api::FriendshipsController < ApplicationController
     def create
         @friendship = current_user.friendships.create(friend_id: params[:friend_id])
         if @friendship.save
-            # render :show
+            render :show
         else
-            # render json: ["Unable to establish friendship"], status: 422
+            render json: ["Unable to establish friendship"], status: 422
         end
     end
 

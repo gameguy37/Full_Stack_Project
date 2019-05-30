@@ -3,6 +3,18 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import NewFriendContainer from '../../components/dashboard/new_friend_form_container';
 
+const mapStateToProps = state => {
+    return {
+        modal: state.ui.modal
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        closeModal: () => dispatch(closeModal())
+    };
+};
+
 const Modal = ({ modal, closeModal }) => {
     
     if (!modal) {
@@ -26,17 +38,5 @@ const Modal = ({ modal, closeModal }) => {
         </div>
     );
 }
-
-const mapStateToProps = state => {
-    return {
-        modal: state.ui.modal
-    };
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        closeModal: () => dispatch(closeModal())
-    };
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);

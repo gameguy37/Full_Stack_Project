@@ -467,10 +467,33 @@ input:focus::placeholder {
 /* MODAL STYLING */
 
 .modal-background {
-    background-color: #333333;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #eee;
+    opacity: 0.8;
+    z-index: 10;
 }
 
 .modal-child {
-    z-index: 100;
-    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#invite-friend-modal {
+    padding: 20px 25px;
+    height: 236px;
+    width: 510px;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #333333;
+    background-color: white;
+    border: 1px solid #333;
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
