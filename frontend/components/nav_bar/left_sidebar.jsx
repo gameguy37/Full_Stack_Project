@@ -1,8 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FriendIndexItem from './friend_index_item';
-import UsersIndex from '../users/users_index_container';
 
 class LeftSidebar extends React.Component {
     constructor(props) {
@@ -21,7 +20,6 @@ class LeftSidebar extends React.Component {
     render() {
         const { acceptedFriendIds } = this.props;
         const { pendingFriendIds } = this.props;
-        // debugger
         const acceptedFriends = acceptedFriendIds.map( id => {
             return (
                 <FriendIndexItem key={id} userId={id}/>
@@ -39,15 +37,14 @@ class LeftSidebar extends React.Component {
         return (
             <>
                 <div id="left-sidebar-box">
-                    <NavLink to="/dashboard" id="ls-dashboard-link">Dashboard</NavLink>
-                    <NavLink to="/recent" id="ls-recent-link">Recent activity</NavLink>
-                    <NavLink to="/all" id="ls-all-link">All expenses</NavLink>
+                    <Link to="/dashboard" id="ls-dashboard-link">Dashboard</Link>
+                    <Link to="/recent" id="ls-recent-link"><i class="fas fa-flag"></i> Recent activity</Link>
+                    <Link to="/all" id="ls-all-link"><i class="fas fa-list"></i> All expenses</Link>
                     <div className="ls-header">
                         <span>FRIENDS</span>
                         <a href="#"><i className="fas fa-plus"></i> add</a>
                     
                     </div>
-                    {/* <UsersIndex /> */}
                     {allFriends}
                 </div>
             </>

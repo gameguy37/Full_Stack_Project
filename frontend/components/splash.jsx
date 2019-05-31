@@ -6,7 +6,7 @@ const Splash = () => (
     <div>
         <header className="splash-header">
             <div className="flex-box">
-                <span className="styled-name">IMAGE GOES HERE</span>
+                <span className="styled-name">goDutch</span>
                 <nav className="nav-links">
                     <LoginForm /> or <Link to="/signup" className="header-signup-btn">Sign up</Link>
                     {/* <button className="header-login-btn">Log in</button> or <Link to="/signup" className="header-signup-btn">Sign up</Link> */}

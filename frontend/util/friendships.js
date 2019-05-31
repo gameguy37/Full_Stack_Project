@@ -1,5 +1,4 @@
 const createFriendship = (invitee) => {
-    debugger
     let email = invitee;
     let parts = invitee.split("@");
     console.log(parts);

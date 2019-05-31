@@ -76,18 +76,34 @@
 #ls-dashboard-link,
 #ls-recent-link,
 #ls-all-link {
-    margin: 11px 0 0;
-    padding: 3px 8px 5px 5px;
-    font-size: 16px;
-    line-height: 21px;
-    display: block;
-    height: 19px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    border-left-color: rgb(255, 255, 255);
+    border-left-style: solid;
+    border-left-width: 6px;
+    color: rgb(153, 153, 153);
     cursor: pointer;
+    display: block;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    height: 19px;
+    line-height: 21px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 8px;
+    padding-top: 3px;
     text-align: left;
-    font-family:  'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-decoration-color: rgb(153, 153, 153);
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-overflow: ellipsis;
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    white-space: nowrap
 }
 
 #ls-dashboard-link:active,

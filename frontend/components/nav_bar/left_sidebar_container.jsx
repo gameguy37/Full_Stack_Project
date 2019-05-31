@@ -7,7 +7,6 @@ const mapStateToProps = state => {
     return {
         acceptedFriendIds: state.entities.users[state.session.id].acceptedFriendIds,
         pendingFriendIds: state.entities.users[state.session.id].pendingFriendIds,
-        users: Object.values(state.entities.users),
     };
 };
 
