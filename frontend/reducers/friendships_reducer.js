@@ -1,4 +1,4 @@
-import { RECEIVE_FRIENDSHIP } from '../../actions/dashboard_actions';
+import { RECEIVE_FRIENDSHIP } from '../actions/dashboard_actions';
 import { merge } from 'lodash';
 
 export default (state = {}, action) => {

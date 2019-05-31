@@ -7,13 +7,17 @@ class NavBar extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.fetchUsers();
+    }
+
     render() {
         return (
             <>
                 <header className="nav-bar">
                     <div className="nav-div">
                         <span className="nav-styled-name">IMAGE GOES HERE</span>
-                        <a href="#" onClick={this.props.logout} className="nav-user-dropdown">{this.props.user.name}</a>
+                        <a href="#" onClick={this.props.logout} className="nav-user-dropdown">LOGOUT {this.props.user.name}</a>
                     </div>
                 </header>
                 <br/>

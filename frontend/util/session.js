@@ -7,10 +7,11 @@ export const createNewUser = (user) => {
 };
 
 export const createSession = (user) => {
+    debugger
     return $.ajax({
         method: 'POST',
         url: 'api/session',
-        data: { user },
+        data: user,
     });
 };
 

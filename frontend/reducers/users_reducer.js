@@ -1,4 +1,4 @@
-import { RECEIVE_USERS, RECEIVE_USER } from '../../actions/users_actions';
+import { RECEIVE_USERS, RECEIVE_USER } from '../actions/users_actions';
 import { merge } from 'lodash';
 
 export default (state = {}, action) => {

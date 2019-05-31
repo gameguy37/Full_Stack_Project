@@ -4,7 +4,7 @@ import NewUserForm from './new_user_form';
 
 const mapDispatchToProps = dispatch => {
     return {
-        signup: (user) => dispatch(signup(user))
+        signup: (user) => dispatch(signup(user)),
     };
 };
 
