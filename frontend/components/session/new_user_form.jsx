@@ -33,6 +33,9 @@ class NewUserForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.signup(this.state);
+        // this.setState({
+
+        // })
     }
 
     render() {
