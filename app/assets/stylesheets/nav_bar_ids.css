@@ -70,6 +70,7 @@
 #left-sidebar-box {
     display: flex;
     flex-direction: column;
+    width: 168px;
 }
 
 #ls-dashboard-link,
@@ -106,7 +107,9 @@
     font-family:  'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.header {
+.ls-header {
+    display: flex;
+    justify-content: space-between;
     position: relative;
     margin-left: 5px;
     background: #f6f6f6;
@@ -115,59 +118,6 @@
     margin-top: 5px;
     border-top: 1px solid #f3f3f3;
     border-bottom: 1px solid #eee;
-    text-transform: uppercase;
     padding: 0 5px;
-}
-
-#invite-box {
-    /* display: flex;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    border-top: none;
-    padding: 3px 5px;
-    margin: 15px 0 0 5px;
-    white-space: nowrap;
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 18px;
-    width: 168px; */
-}
-
-#invite-box-title {
-    background: #5bc5a7;
-    color: #fff;
-    border: 1px solid #39a385;
-    font-weight: bold;
-    font-size: 14px;
-    padding: 3px 5px;
-    margin: 15px 0 0 5px;
-    text-shadow: 0 -1px 0 #3eaf8f;
-    display: block;
-    text-align: left;
-    white-space: nowrap;
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 18px;
-    width: 168px;
-}
-
-#invite-box-btn {
-    font-size: 12px;
-    padding: 2px 6px;
-    background: #eee;
-    border-top-color: rgba(0, 0, 0, 0.1);
-    border-right-color: rgba(0, 0, 0, 0.1);
-    border-bottom-color: rgba(0, 0, 0, 0.25);
-    border-left-color: rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    margin-bottom: 0;
-    line-height: 18px;
-    color: #333333;
-    text-align: center;
-    text-shadow: 0 1px 1px rgba(255,255,255,0.75);
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    outline: 0;
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-rendering: optimizeLegibility;
 }

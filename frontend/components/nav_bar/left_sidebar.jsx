@@ -12,8 +12,12 @@ class LeftSidebar extends React.Component {
 
     }
 
+    componentDidMount() {
+        this.props.fetchUsers();
+    }
+
     render() {
-        
+        debugger
         const acceptedFriends = this.props.acceptedFriendIds.map( id => {
             return (
                 <li className="friend" key={id}>{id}</li>
@@ -34,17 +38,11 @@ class LeftSidebar extends React.Component {
                     <NavLink to="/dashboard" id="ls-dashboard-link">Dashboard</NavLink>
                     <NavLink to="/recent" id="ls-recent-link">Recent activity</NavLink>
                     <NavLink to="/all" id="ls-all-link">All expenses</NavLink>
-                    <span className="header">FRIENDS</span>
-                    {allFriends}
-                    <div id="invite-box">
-                        <span id="invite-box-title">Invite friends</span>
-                        <div id="invite-box-fields">
-                            <input id="invite-box-input" placeholder="Enter an email address"></input>
-                            <br/>
-                            <button onClick={() => this.props.openModal('newfriend')} id="invite-box-btn">Send invite</button>
-                        </div>
+                    <div className="ls-header">
+                        <span>FRIENDS</span>
+                        <a href="#"><i className="fas fa-plus"></i> add</a>
                     </div>
-
+                    {allFriends}
                 </div>
             </>
         );
