@@ -80,9 +80,40 @@
     border-left-style: solid;
     border-left-width: 6px;
     color: rgb(153, 153, 153);
-    cursor: pointer;
     display: block;
-    font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    height: 19px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 8px;
+    padding-top: 3px;
+    text-align: left;
+    text-decoration-color: rgb(153, 153, 153);
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-overflow: ellipsis;
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    white-space: nowrap;
+}
+
+#ls-dashboard-link.active,
+#ls-recent-link.active,
+#ls-all-link.active {
+    border-left-color: #5bc5a7;
+    border-left-style: solid;
+    border-left-width: 6px;
+    color: rgb(153, 153, 153);
+    display: block;
+    font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     height: 19px;
     line-height: 21px;
@@ -103,24 +134,8 @@
     text-overflow: ellipsis;
     text-rendering: optimizelegibility;
     text-size-adjust: 100%;
-    white-space: nowrap
-}
-
-#ls-dashboard-link:active,
-#ls-recent-link:active,
-#ls-all-link:active {
-    margin: 11px 0 0;
-    padding: 3px 8px 5px 5px;
-    font-size: 16px;
-    line-height: 21px;
-    display: block;
-    height: 19px;
-    overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
-    cursor: pointer;
-    text-align: left;
-    font-family:  'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bolder;
 }
 
 .ls-header {
@@ -134,6 +149,14 @@
     margin-top: 5px;
     border-top: 1px solid #f3f3f3;
     border-bottom: 1px solid #eee;
-    padding: 0 5px;
+    padding: 5px 5px;
     text-rendering: optimizeLegibility;
+    font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#add-friend-link {
+    background: #f6f6f6;
+    color: #ccc;
+    font-size: 11px;
+    font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

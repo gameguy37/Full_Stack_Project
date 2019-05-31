@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import NewFriendContainer from '../../components/dashboard/new_friend_form_container';
+import AddFriend from '../../components/nav_bar/add_friend_container';
 
 const mapStateToProps = state => {
     return {
@@ -23,8 +23,8 @@ const Modal = ({ modal, closeModal }) => {
 
     let component;
     switch (modal) {
-        case 'newfriend':
-            component = <NewFriendContainer />;
+        case 'addFriend':
+            component = <AddFriend />;
             break;
         default:
             return null;

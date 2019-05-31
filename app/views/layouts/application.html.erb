@@ -11,6 +11,27 @@
           <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
       </script>
     <% end %>
+
+    <script type="text/javascript">
+      window.desktopDashboard = "<%= image_url('desktop_dashboard.png') %>"
+    </script>
+
+    <script type="text/javascript">
+      window.logo = "<%= image_url('logo.png') %>"
+    </script>
+
+    <script type="text/javascript">
+      window.mobileDashboard = "<%= image_url('mobile_dashboard.png') %>"
+    </script>
+
+    <script type="text/javascript">
+      window.profilePic = "<%= image_url('profile_pic.png') %>"
+    </script>
+
+    <script type="text/javascript">
+      window.styledName = "<%= image_url('styled_name.png') %>"
+    </script>
+
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">

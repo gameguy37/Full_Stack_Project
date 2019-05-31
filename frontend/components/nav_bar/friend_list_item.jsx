@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-const FriendIndexItem = (props) => {
+const FriendListItem = (props) => {
     if (!props.user) {
         return null;
     }
@@ -16,4 +16,4 @@ const FriendIndexItem = (props) => {
     );
 };
 
-export default connect(mapStateToProps)(FriendIndexItem);
+export default connect(mapStateToProps)(FriendListItem);

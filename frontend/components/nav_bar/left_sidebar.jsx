@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import FriendIndexItem from './friend_index_item';
+import { NavLink, Link } from 'react-router-dom';
+import FriendListItem from './friend_list_item';
 
 class LeftSidebar extends React.Component {
     constructor(props) {
@@ -22,13 +22,13 @@ class LeftSidebar extends React.Component {
         const { pendingFriendIds } = this.props;
         const acceptedFriends = acceptedFriendIds.map( id => {
             return (
-                <FriendIndexItem key={id} userId={id}/>
+                <FriendListItem key={id} userId={id}/>
             );
         })
 
         const pendingFriends = pendingFriendIds.map(id => {
             return (
-                <FriendIndexItem key={id} userId={id} />
+                <FriendListItem key={id} userId={id} />
             );
         })
 
@@ -37,12 +37,12 @@ class LeftSidebar extends React.Component {
         return (
             <>
                 <div id="left-sidebar-box">
-                    <Link to="/dashboard" id="ls-dashboard-link">Dashboard</Link>
-                    <Link to="/recent" id="ls-recent-link"><i class="fas fa-flag"></i> Recent activity</Link>
-                    <Link to="/all" id="ls-all-link"><i class="fas fa-list"></i> All expenses</Link>
+                    <NavLink to="/dashboard" id="ls-dashboard-link"><img height="16px" src={window.logo}/> Dashboard</NavLink>
+                    <Link to="/recent" id="ls-recent-link"><i className="fas fa-flag"></i> Recent activity</Link>
+                    <Link to="/all" id="ls-all-link"><i className="fas fa-list"></i> All expenses</Link>
                     <div className="ls-header">
                         <span>FRIENDS</span>
-                        <a href="#"><i className="fas fa-plus"></i> add</a>
+                        <a id="add-friend-link" onClick={() => this.props.openModal('addFriend')} href="#"><i className="fas fa-plus"></i> add</a>
                     
                     </div>
                     {allFriends}
