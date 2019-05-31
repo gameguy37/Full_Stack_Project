@@ -3,7 +3,6 @@ import AddFriend from './add_friend';
 import { fetchUsers } from '../../actions/users_actions';
 
 const mapStateToProps = (state) => {
-    debugger
     return {
         users: Object.values(state.entities.users)
     };

@@ -1,27 +1,15 @@
-const createFriendship = (invitee) => {
-    let email = invitee;
-    let parts = invitee.split("@");
-    console.log(parts);
-    let name = parts[0];
-    let password = 'password123';
-
-    // create a new user (without their permission and with a default password) in the users table with an ajax request
-    $.ajax({
+export const createFriendship = (friendee) => {
+    return $.ajax({
         method: 'POST',
-        url: 'api/users',
-        data: {
-            email: email,
-            name: name,
-            password: password,
-        },
-        success: function(user) {
-            return $.ajax({
-                method: 'POST',
-                url: 'api/friendships',
-                data: { friend_id: user.id },
-            })
-        }
+        url: 'api/friendships',
+        data: { friendee }
     });
 };
 
-export default createFriendship;
+export const destroyFriendship = (id) => {
+    return $.ajax({
+        method: 'DELETE',
+        url: 'api/friendships',
+        data: id
+    });
+};

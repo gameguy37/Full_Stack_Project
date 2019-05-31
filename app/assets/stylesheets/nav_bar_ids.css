@@ -149,7 +149,7 @@
     margin-top: 5px;
     border-top: 1px solid #f3f3f3;
     border-bottom: 1px solid #eee;
-    padding: 5px 5px;
+    padding: 4px 5px;
     text-rendering: optimizeLegibility;
     font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -159,4 +159,19 @@
     color: #ccc;
     font-size: 11px;
     font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+}
+
+.friend {
+    color: rgb(153, 153, 153);
+    display: block;
+    font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: 12px;
+    line-height: 18px;
+    margin-bottom: 5px;
+    /* padding-bottom: 5px; */
+    padding-left: 14px;
+    padding-top: 3px;
+    text-align: left;
 }

@@ -42,8 +42,7 @@ class LeftSidebar extends React.Component {
                     <Link to="/all" id="ls-all-link"><i className="fas fa-list"></i> All expenses</Link>
                     <div className="ls-header">
                         <span>FRIENDS</span>
-                        <a id="add-friend-link" onClick={() => this.props.openModal('addFriend')} href="#"><i className="fas fa-plus"></i> add</a>
-                    
+                        <a id="add-friend-link" onClick={() => this.props.openModal('addFriend')} href="#"><i className="fas fa-plus fa-sm"></i> add</a>
                     </div>
                     {allFriends}
                 </div>
