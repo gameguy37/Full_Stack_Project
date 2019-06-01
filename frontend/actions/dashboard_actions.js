@@ -1,4 +1,4 @@
-import createFriendship from '../util/friendships';
+import { createFriendship } from '../util/friendships';
 
 export const RECEIVE_FRIENDSHIP = 'RECEIVE_FRIENDSHIP';
 

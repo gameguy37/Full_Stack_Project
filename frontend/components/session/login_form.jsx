@@ -40,11 +40,23 @@ class LoginForm extends React.Component {
         this.props.login({ email: 'placeholder@gmail.com', password: 'password123' });
     }
 
+    // transition() {
+    //     const dd = document.getElementById("dropdown");
+    //     dd.classList.toggle('open');
+    //     // if (dd.classList.contains('open')) {
+    //     //     dd.classList.add('closed');
+    //     //     dd.classList.remove('open');
+    //     // } else {
+    //     //     dd.classList.add('open');
+    //     //     dd.classList.remove('closed');
+    //     // }
+    // }
+
     render() {
         let dropdownForm;
         if (this.state.formOpen) {
             dropdownForm = (
-                <div className="login-form">
+                <div id="login-form" className="login-form">
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" value={this.state.email} onChange={this.change("email")} placeholder="Email address" />
                         <br/>
@@ -61,10 +73,25 @@ class LoginForm extends React.Component {
         } else {
             dropdownForm = null;
         }
-        
+       
         return (
             <div>
                 <button onClick={this.showForm} className="header-login-btn">Log in</button>
+                {/* <div id="dropdown">
+                    <div id="login-form" className="login-form">
+                        <form onSubmit={this.handleSubmit}>
+                            <input type="text" value={this.state.email} onChange={this.change("email")} placeholder="Email address" />
+                            <br />
+                            <input type="password" value={this.state.password} onChange={this.change("password")} placeholder="Password" />
+                            <br />
+                            <input className="dropdown-login-btn" type="submit" value="Log in to Splitwise" />
+                        </form>
+                        <form onSubmit={this.handleSubmit2}>
+                            <input className="dropdown-demo-login-btn" type="submit" value="Demo Login" />
+                        </form>
+                        <span className="forgot-password">Forgot your password? <a href="#">Click here</a></span>
+                    </div>
+                </div> */}
                 {dropdownForm}
             </div>
         );

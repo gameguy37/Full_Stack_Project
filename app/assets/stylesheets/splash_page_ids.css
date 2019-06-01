@@ -186,7 +186,14 @@ input:focus::placeholder {
     color: #005580;
 }
 
-.nav-styled-name {
+.styled-name {
     font-family: 'Merriweather', serif;
+    font-weight: bold;
+    letter-spacing: 14px;
+    vertical-align: middle;
     color: #eee;
+    text-transform: uppercase;
+    font-size: 17px;
+    text-shadow: none;
 }
+

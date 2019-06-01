@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import { login, logout } from './actions/session_actions';
-import createFriendship from './util/friendships';
+import { createFriendship } from './util/friendships';
 
 document.addEventListener('DOMContentLoaded', () => {
     
