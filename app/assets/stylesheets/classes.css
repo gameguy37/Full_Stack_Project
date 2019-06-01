@@ -14,12 +14,16 @@
     margin-top: 24px;
     margin-bottom: 10px;
     line-height: 36px;
-    font-weight: bolder;
 }
 
 .splash-title img {
     padding-right: 20px;
     padding-bottom: 5px;
+    margin-right: 5px;
+}
+
+.splash-title h1 {
+    font-weight: 700;
 }
 
 .splash-caption {
