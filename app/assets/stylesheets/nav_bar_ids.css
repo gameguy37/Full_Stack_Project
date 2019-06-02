@@ -17,11 +17,6 @@
     position: relative;
 }
 
-.nav-styled-name {
-    float: left;
-    padding: 10px 20px 2px;
-}
-
 .nav-user-dropdown {
     float: right;
     padding: 10px 20px 2px;

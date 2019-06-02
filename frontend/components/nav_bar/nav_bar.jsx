@@ -12,7 +12,7 @@ class NavBar extends React.Component {
             <>
                 <header className="nav-bar">
                     <div className="nav-div">
-                        <span className="nav-styled-name">g o D u t c h</span>
+                        <span className="nav-styled-name">GODUTCH</span>
                         <a href="#" onClick={this.props.logout} className="nav-user-dropdown">LOGOUT {this.props.user.name}</a>
                     </div>
                 </header>

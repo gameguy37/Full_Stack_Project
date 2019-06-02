@@ -192,8 +192,19 @@ input:focus::placeholder {
     letter-spacing: 14px;
     vertical-align: middle;
     color: #eee;
-    text-transform: uppercase;
     font-size: 17px;
     text-shadow: none;
+}
+
+.nav-styled-name {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    letter-spacing: 10px;
+    vertical-align: middle;
+    color: #eee;
+    font-size: 15px;
+    text-shadow: none;
+    float: left;
+    padding: 10px 2px;
 }
 

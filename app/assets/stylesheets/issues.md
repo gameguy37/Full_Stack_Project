@@ -9,3 +9,4 @@ error handling
 add friend button
 delete friends
 edit friend info
+autofocus fields

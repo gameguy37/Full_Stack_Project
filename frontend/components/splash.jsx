@@ -6,7 +6,7 @@ const Splash = () => (
     <>
         <header className="splash-header">
             <div className="flex-box">
-                <span className="styled-name">goDutch</span>
+                <span className="styled-name">GODUTCH</span>
                 <nav className="nav-links">
                     <LoginForm /> or <Link to="/signup" className="header-signup-btn">Sign up</Link>
                 </nav>
@@ -19,8 +19,7 @@ const Splash = () => (
                 <img src={window.desktopDashboard} /><img src={window.mobileDashboard} />
             </div>
             <div>
-                <button className="splash-signup-btn"><div className="flex-column">Get started now<br /><span>(it's free!)</span></div></button>
-                {/* <Link to="/signup" className="splash-signup-btn">Get started now<span>(it's free!)</span></Link> */}
+                <Link to="/signup"><button className="splash-signup-btn"><div className="flex-column">Get started now<br /><span>(it's free!)</span></div></button></Link>
             </div>
         </section>
     </>
