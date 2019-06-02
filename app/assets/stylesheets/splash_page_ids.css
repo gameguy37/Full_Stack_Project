@@ -62,6 +62,7 @@
     border-radius: 4px;
     text-decoration: none;
     cursor: pointer;
+    position: relative;
 }
 
 .header-login-btn:hover {
@@ -72,14 +73,28 @@
     outline: none;
 }
 
-.login-form {
-    display: block;
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 14px;
+#dropdown {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 49px;
+    right: 0;
+    transition: height 0.5s;
+}
+
+#dropdown.open {
+    height: 300px;
     position: absolute;
     z-index: 98;
     top: 49px;
     right: 0;
+    transition: height 0.5s;
+}
+
+#login-form {
+    display: block;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
     padding: 10px;
     color: #333;
     text-shadow: none;
