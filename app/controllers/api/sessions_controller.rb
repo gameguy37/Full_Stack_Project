@@ -6,16 +6,16 @@ class Api::SessionsController < ApplicationController
             login(@user)
             render :show
         else
-            render json: ["Invalid Credentials"], status: 422
+            render json: ["Whoops! We couldn't find an account for that email address and password. Maybe you need to sign up?"], status: 422
         end
     end
 
     def destroy
         if current_user
             logout
-            render json: {} ######
+            render json: {}
         else
-            render json: {}, status: 404 ######
+            render json: {}, status: 404
         end
     end
 

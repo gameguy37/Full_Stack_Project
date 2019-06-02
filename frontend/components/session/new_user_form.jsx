@@ -33,13 +33,24 @@ class NewUserForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.signup(this.state);
-        // this.setState({
+    }
 
-        // })
+    displayErrors() {
+        debugger
+        return (
+            <ul>
+                {this.props.errors.map( (err, idx) => (
+                    <li className="error" key={idx}>{err}</li>
+                ))}
+            </ul>
+        );
     }
 
     render() {
+        debugger
         return (
+            <>
+            <div className="session-errors">{this.displayErrors()}</div>
             <div id="signup-box">
                 <form onSubmit={this.handleSubmit}>
                     <span id="intro">Introduce yourself</span>
@@ -67,6 +78,7 @@ class NewUserForm extends React.Component {
                     </div>
                 </form>
             </div>
+            </>
         );
     }
 }
