@@ -44,6 +44,8 @@
 
 .header-signup-btn:hover {
     background-color: #ff5216;
+    text-decoration: none;
+    color: #fff;
 }
 
 .header-login-btn {

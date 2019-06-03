@@ -1,8 +1,8 @@
-export const createFriendship = (friendee) => {
+export const createFriendship = friendee => {
     return $.ajax({
         method: 'POST',
         url: 'api/friendships',
-        data: { friendee }
+        data: friendee
     });
 };
 

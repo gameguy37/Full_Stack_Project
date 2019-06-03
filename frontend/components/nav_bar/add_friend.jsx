@@ -12,9 +12,10 @@ export default class AddFriend extends React.Component {
 
     render() {
         const { users } = this.props;
+        debugger
         const friends = users.map( (user) => {
             return (
-                <AddFriendItem onClick={this.selectName} key={user.id} friend={user} />
+                <AddFriendItem key={user.id} friend={user} />
             );
         });
 

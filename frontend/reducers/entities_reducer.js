@@ -8,7 +8,7 @@ import CommentsReducer from './comments_reducer';
 
 export default combineReducers({
     users: UsersReducer,
-    friendships: FriendshipsReducer,
+    // friendships: FriendshipsReducer,
     bills: BillsReducer,
     payments: PaymentsReducer,
     comments: CommentsReducer,

@@ -214,6 +214,13 @@
     font-weight: 400;
 }
 
+.friend li {
+    width: 162px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .friend a {
     text-decoration: none;
     color: rgb(153, 153, 153);
@@ -239,4 +246,16 @@
     color:  #5bc5a7;
     border-left: 6px solid  #5bc5a7;
     font-weight: 700;
+}
+
+.add-friend-flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.add-friend-btn {
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 1px solid #999;
 }

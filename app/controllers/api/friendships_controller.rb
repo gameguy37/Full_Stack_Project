@@ -1,7 +1,7 @@
 class Api::FriendshipsController < ApplicationController
 
     def create
-        @friendship = current_user.friendships.create(friend_id: params[:friend_id])
+        @friendship = current_user.friendships.create(friend_id: params[:id])
         if @friendship.save
             render :show
         else

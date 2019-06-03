@@ -1,6 +1,6 @@
 import { RECEIVE_USERS, RECEIVE_USER } from '../actions/users_actions';
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session_actions';
-import { DELETE_FRIENDSHIP } from '../actions/dashboard_actions';
+import { RECEIVE_FRIENDSHIP, DELETE_FRIENDSHIP } from '../actions/dashboard_actions';
 import { merge } from 'lodash';
 
 export default (state = {}, action) => {
@@ -11,6 +11,7 @@ export default (state = {}, action) => {
         case RECEIVE_USER:
         case RECEIVE_CURRENT_USER:
             return merge({}, state, {[action.user.id]: action.user});
+        case RECEIVE_FRIENDSHIP:
         case DELETE_FRIENDSHIP:
             let newState = merge({}, state);
             delete newState[action.user.id];

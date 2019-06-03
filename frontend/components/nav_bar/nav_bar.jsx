@@ -14,7 +14,7 @@ class NavBar extends React.Component {
                 <header className="nav-bar">
                     <div className="nav-div">
                         <span className="nav-styled-name">GODUTCH</span>
-                        <span className="nav-user-dropdown"><img src={window.profilePic} />{this.props.user.name} <b className="caret" /></span>
+                        <span onClick={this.props.logout} className="nav-user-dropdown"><img src={window.profilePic} />{this.props.user.name} <b className="caret" /></span>
                     </div>
                 </header>
                 <br/>
