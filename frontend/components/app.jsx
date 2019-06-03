@@ -13,6 +13,9 @@ const App = () => (
             <AuthRoute exact path="/" component={Splash} />
             <AuthRoute exact path="/signup" component={NewUserForm} />
             <ProtectedRoute exact path="/dashboard" component={NavBar}/>
+            <ProtectedRoute exact path="/recent" component={NavBar} />
+            <ProtectedRoute exact path="/all" component={NavBar} />
+            {/* <ProtectedRoute path={`friends/${friend.id}`} component={Friend} /> */}
         </Switch>
     </div>
 )

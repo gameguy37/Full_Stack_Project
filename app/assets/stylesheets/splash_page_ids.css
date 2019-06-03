@@ -151,7 +151,7 @@ input:focus::placeholder {
     cursor: pointer;
     margin-top: 8px;
     margin-bottom: 10px;
-    width: 100%;
+    width: 100% !important;
 }
 
 .dropdown-demo-login-btn {
@@ -170,7 +170,7 @@ input:focus::placeholder {
     cursor: pointer;
     margin-top: 8px;
     margin-bottom: 10px;
-    width: 100%;
+    width: 100% !important;
 }
 
 .dropdown-login-btn:hover {

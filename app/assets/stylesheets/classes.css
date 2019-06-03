@@ -14,6 +14,7 @@
     margin-top: 24px;
     margin-bottom: 10px;
     line-height: 36px;
+    width: 940px;
 }
 
 .splash-title img {
@@ -29,6 +30,8 @@
 .splash-caption {
     font-size: 21px;
     line-height: 40px;
+    width: 940px;
+    white-space: nowrap;
 }
 
 span > strong {
@@ -40,9 +43,9 @@ span > strong {
     display: flex;
     justify-content: center;
     height: 550px;
-    width: 600px;
     margin: 0 auto;
     margin-top: 20px;
+    width: 940px;
 }
 
 .splash-images > img {

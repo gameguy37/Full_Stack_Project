@@ -19,7 +19,8 @@ const FriendListItem = (props) => {
         return null;
     }
     return (
-        <li className="friend"><i className="fas fa-user fa-xs"></i> {props.user.name}</li>
+        <li className="friend"><i className="icon-user" height="18px"></i> {props.user.name}</li>
+
     );
 };
 

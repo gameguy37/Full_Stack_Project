@@ -18,14 +18,49 @@
 }
 
 .nav-user-dropdown {
+    display: flex;
+    align-content: center;
     float: right;
-    padding: 10px 20px 2px;
+    padding: 10px 5px 5px;
+}
+
+.nav-user-dropdown:hover {
+    background: #48be9d;
+}
+
+.nav-user-dropdown img {
+    height: 22px;
+    width: 22px;
+    border: 1px solid #3eaf8f;
+    background: #3eaf8f;
+    border-radius: 12px;
+    margin-top: -5px;
+    margin-right: 4px;
+}
+
+.nav-user-dropdown span {
+    vertical-align: center;
+    line-height: 19px;
+}
+
+.nav-user-dropdown b {
+    margin-top: 5px;
+    margin-left: 4px;
+    color: #fff;
+    line-height: 19px;
+    opacity: 0.3;
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    content: "";
+
 }
 
 #center-box {
     display: block;
     width: 558px;
-    min-height: 100%;
+    height: 96%;
     position: absolute;
     top: 35px;
     left: 50%;
@@ -39,14 +74,10 @@
 #left-sidebar {
     display: block;
     width: 200px;
-    /* remove later */
-    height: 500px; 
-    /* remove this later */
     position: absolute;
     top: 35px;
-    left: 50%;
-    margin-left: -480px;
-    border: 1px solid black;
+    right: 50%;
+    margin-right: 279px;
 }
 
 #right-sidebar {
@@ -68,6 +99,26 @@
     width: 168px;
 }
 
+#ls-dashboard-link {
+    margin: 11px 0 0;
+    padding: 3px 8px 5px 5px;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+#ls-recent-link {
+    margin: 0 0 10px;
+    padding: 3px 8px 5px 5px;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+#ls-all-link {
+    line-height: 18px;
+    padding: 3px 8px 2px 8px;
+    font-size: 14px;
+}
+
 #ls-dashboard-link,
 #ls-recent-link,
 #ls-all-link {
@@ -77,19 +128,9 @@
     color: rgb(153, 153, 153);
     display: block;
     font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
     height: 19px;
-    line-height: 18px;
-    margin-bottom: 10px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
     overflow-x: hidden;
     overflow-y: hidden;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 8px;
-    padding-top: 3px;
     text-align: left;
     text-decoration-color: rgb(153, 153, 153);
     text-decoration-line: none;
@@ -98,6 +139,7 @@
     text-rendering: optimizelegibility;
     text-size-adjust: 100%;
     white-space: nowrap;
+    filter: grayscale(100%);
 }
 
 #ls-dashboard-link.active,
@@ -109,19 +151,9 @@
     color: rgb(153, 153, 153);
     display: block;
     font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
     height: 19px;
-    line-height: 21px;
-    margin-bottom: 10px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
     overflow-x: hidden;
     overflow-y: hidden;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 8px;
-    padding-top: 3px;
     text-align: left;
     text-decoration-color: rgb(153, 153, 153);
     text-decoration-line: none;
@@ -131,6 +163,11 @@
     text-size-adjust: 100%;
     white-space: nowrap;
     font-weight: bolder;
+    filter: grayscale(0%);
+}
+
+#ls-dashboard-link img {
+    
 }
 
 .ls-header {
@@ -183,8 +220,14 @@
     font-weight: 400;
 }
 
-.fa-user {
-    margin-right: 6px;
+.icon-user::before {
+    margin-top: 2px;
+    margin-right: 2px;
+}
+
+.icon-list::before {
+    margin-top: 2px;
+    margin-right: 1px;
 }
 
 .friend:hover {

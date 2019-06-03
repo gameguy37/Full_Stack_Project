@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import FriendListItem from './friend_list_item';
 
 class LeftSidebar extends React.Component {
@@ -37,15 +37,14 @@ class LeftSidebar extends React.Component {
         return (
             <>
                 <div id="left-sidebar-box">
-                    <NavLink to="/dashboard" id="ls-dashboard-link"><img height="16px" src={window.logo}/> Dashboard</NavLink>
-                    <Link to="/recent" id="ls-recent-link"><i className="fas fa-flag"></i> Recent activity</Link>
-                    <Link to="/all" id="ls-all-link"><i className="fas fa-list"></i> All expenses</Link>
-                    <div className="ls-header">
-                        <span>FRIENDS</span>
-                        <a id="add-friend-link" onClick={() => this.props.openModal('addFriend')} href="#"><i className="fas fa-plus fa-sm"></i> add</a>
-                    </div>
-                    <ul>{allFriends}</ul>
-                    
+                        <NavLink to="/dashboard" id="ls-dashboard-link"><img height="16px" src={window.logo}/> Dashboard</NavLink>
+                        <NavLink to="/recent" id="ls-recent-link"><i className="icon-flag"></i> Recent activity</NavLink>
+                        <NavLink to="/all" id="ls-all-link"><i className="icon-list"></i> All expenses</NavLink>
+                        <div className="ls-header">
+                            <span>FRIENDS</span>
+                            <a id="add-friend-link" onClick={() => this.props.openModal('addFriend')} href="#"><i className="fas fa-plus fa-sm"></i> add</a>
+                        </div>
+                        <ul>{allFriends}</ul>
                 </div>
             </>
         );
