@@ -1,1 +1,1 @@
-json.extract! @friendship, :user_id, :friend_id
+json.partial! 'api/users/user', user: current_user

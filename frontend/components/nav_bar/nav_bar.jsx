@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import LeftSidebar from './left_sidebar_container';
+import RightSidebar from '../right_sidebar/right_sidebar';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class NavBar extends React.Component {
 
                 </section>
                 <section id="right-sidebar">
-
+                    <RightSidebar />
                 </section>
             </>
         );

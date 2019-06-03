@@ -1,6 +1,6 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import Modal from './modal/modal';
 import Splash from './splash';
 import NewUserForm from './session/new_user_form_container';

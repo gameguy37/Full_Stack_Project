@@ -6,10 +6,10 @@ export const createFriendship = (friendee) => {
     });
 };
 
-export const destroyFriendship = (id) => {
+export const destroyFriendship = id => {
+
     return $.ajax({
         method: 'DELETE',
-        url: 'api/friendships',
-        data: id
+        url: `api/friendships/${id}`,
     });
 };

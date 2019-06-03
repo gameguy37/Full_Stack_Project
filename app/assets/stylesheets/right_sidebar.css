@@ -1,0 +1,143 @@
+#right-sidebar-box {
+    display: block;
+    width: 200px;
+    position: absolute;
+    top: 35px;
+    right: 50%;
+    margin-right: -504px;
+}
+
+#right-sidebar-box h2 {
+    margin-top: 9px;
+    font-size: 13px;
+    line-height: 24px;
+    color: #999;
+    font-weight: 700;
+}
+
+#rs-all-text {
+    margin-top: 50px;
+    font-size: 13px;
+    line-height: 24px;
+    color: #999;
+    font-weight: 700;
+}
+
+#rs-friend-text {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 24px;
+    color: #999;
+    font-weight: 700;
+}
+
+#right-sidebar-box span {
+    font-size: 13px;
+    line-height: 18px;
+    color: #333333;
+}
+
+#iphone {
+    margin: 10px 0 5px 0;
+    width: 160px;
+    height: 52px;
+}
+
+#android {
+    margin: 3px 0;
+    width: 172px;
+    height: 60px;
+}
+
+#rs-balance-flex {
+    display: flex;
+    flex-direction: column;
+    color: #ff652f;
+}
+
+#owe {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 5px;
+}
+
+#balance {
+    font-size: 28px;
+    line-height: 22px;
+    font-weight: bold;
+}
+
+#rs-friend-settings-btn {
+    display: inline-block;
+    border-radius: 5px;
+    height: 16px;
+    width: 24px;
+    padding: 4px 1px 5px;
+    margin-top: 11px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-color: rgba(0,0,0,0.1);
+    color: #999;
+    opacity: 0.6;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#rs-friend-settings-btn:hover {
+    opacity: 1.0;
+}
+
+#rs-friend-settings-btn.open {
+    background: #eee;
+    color: #333;
+    opacity: 1.0;
+    border: 1px solid #bbb;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.icon-cog {
+    content: "\f013";
+}
+
+.icon-large {
+    vertical-align: middle;
+    font-size: 1.3333333em;
+}
+
+#rs-friend-balances-btn {
+    display: inline-block;
+    border-radius: 5px;
+    height: 16px;
+    width: 24px;
+    padding: 5px 1px 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-color: rgba(0,0,0,0.1);
+    color: #999;
+    opacity: 0.6;
+    font-size: 13px;
+    line-height: 18px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#rs-friend-balances-btn:hover {
+    opacity: 1.0;
+}
+
+#rs-friend-balances-btn.open {
+    background: #eee;
+    color: #333;
+    opacity: 1.0;
+    border: 1px solid #bbb;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.icon-align-justify {
+    vertical-align: middle;
+    font-size: 1.3333333em;
+    margin-left: 1px;
+    margin-bottom: 2px;
+    height: 20px;
+}

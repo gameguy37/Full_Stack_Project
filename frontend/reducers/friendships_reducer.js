@@ -5,7 +5,6 @@ export default (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_FRIENDSHIP:
-            /////// WHAT DO
             return merge({}, state, action.users);
         default:
             return state;
