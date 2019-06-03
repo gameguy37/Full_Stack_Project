@@ -166,10 +166,6 @@
     filter: grayscale(0%);
 }
 
-#ls-dashboard-link img {
-    
-}
-
 .ls-header {
     display: flex;
     justify-content: space-between;
@@ -205,6 +201,9 @@
 }
 
 .friend {
+    border-left-color: #fff;
+    border-left-style: solid;
+    border-left-width: 6px;
     color: rgb(153, 153, 153);
     display: flex;
     align-items: center;
@@ -220,6 +219,11 @@
     font-weight: 400;
 }
 
+.friend a {
+    text-decoration: none;
+    color: rgb(153, 153, 153);
+}
+
 .icon-user::before {
     margin-top: 2px;
     margin-right: 2px;
@@ -231,11 +235,13 @@
 }
 
 .friend:hover {
-    color: rgb(102, 102, 102);
+    color: #666;
     background-color: rgb(238, 238, 238);
+    text-decoration: none;
 }
 
-/* .friend:active {
+.friend.active {
+    color:  #5bc5a7;
     border-left: 6px solid  #5bc5a7;
     font-weight: 700;
-} */
+}

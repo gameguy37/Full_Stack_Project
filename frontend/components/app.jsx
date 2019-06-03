@@ -15,7 +15,7 @@ const App = () => (
             <ProtectedRoute exact path="/dashboard" component={NavBar}/>
             <ProtectedRoute exact path="/recent" component={NavBar} />
             <ProtectedRoute exact path="/all" component={NavBar} />
-            {/* <ProtectedRoute path={`friends/${friend.id}`} component={Friend} /> */}
+            <ProtectedRoute path="/friends/:friendId" component={NavBar} />
         </Switch>
     </div>
 )
