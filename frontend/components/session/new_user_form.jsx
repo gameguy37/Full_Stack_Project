@@ -9,20 +9,10 @@ class NewUserForm extends React.Component {
             name: '',
             email: '',
             password: '',
-            showFields: false,
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.showFields = this.showFields.bind(this);
     }
-
-    // showFields() {
-    //     if (this.state.name === '') {
-    //         this.setState({ showFields: false });
-    //     } else {
-    //         this.setState({ showFields: true });
-    //     }
-    // }
 
     change(field) {
         return e => {

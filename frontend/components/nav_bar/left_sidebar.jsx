@@ -44,7 +44,8 @@ class LeftSidebar extends React.Component {
                         <span>FRIENDS</span>
                         <a id="add-friend-link" onClick={() => this.props.openModal('addFriend')} href="#"><i className="fas fa-plus fa-sm"></i> add</a>
                     </div>
-                    {allFriends}
+                    <ul>{allFriends}</ul>
+                    
                 </div>
             </>
         );

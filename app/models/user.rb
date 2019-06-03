@@ -23,6 +23,21 @@ class User < ApplicationRecord
 
     has_many :friends,
         through: :friendships
+
+    has_many :comments,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: 'Comment'
+
+    has_many :payments,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: 'Payment'
+
+    has_many :bills,
+        primary_key: :id,
+        foreign_key: :biller_id,
+        class_name: 'Bill'
     
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
