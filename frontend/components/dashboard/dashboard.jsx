@@ -4,7 +4,7 @@ import { openModal } from '../modal/modal';
 
 const mapStateToProps = state => {
     return {
-        
+
     };
 }
 
@@ -36,7 +36,16 @@ class Dashboard extends React.Component {
                         </div>
                     </div>
                     <div id="dashboard-balances-bar">
-
+                        <div className="reactive-balances">
+                            total balance
+                            <span>AMOUNT</span>
+                        </div>
+                        <div className="reactive-balances">
+                            you owe
+                        </div>
+                        <div className="reactive-balances">
+                            you are owed
+                        </div>
                     </div>
                 </div>
             </>

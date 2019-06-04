@@ -62,8 +62,18 @@
     border-bottom: 1px solid #ddd;
     color: #999;
     text-align: center;
-    height: 50px;
     line-height: 18px;
     display: flex;
     justify-content: center;
+    padding: 7px 0 2px;
+}
+
+.reactive-balances {
+    display: flex;
+    flex-direction: column;
+    width: 33.333%;
+    font-size: 13px;
+    line-height: 16px;
+    height: 34px;
+    margin-bottom: 4px;
 }
