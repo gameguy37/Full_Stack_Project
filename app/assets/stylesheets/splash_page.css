@@ -223,5 +223,6 @@ input:focus::placeholder {
     text-shadow: none;
     float: left;
     padding: 10px 2px;
+    margin-left: 7px;
 }
 

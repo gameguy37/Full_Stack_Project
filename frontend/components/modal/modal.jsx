@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import AddFriend from '../../components/left_sidebar/add_friend_container';
+import AddExpense from '../../components/dashboard/add_expense_container';
 
 const mapStateToProps = state => {
     return {
@@ -26,6 +27,9 @@ const Modal = ({ modal, closeModal }) => {
         case 'addFriend':
             component = <AddFriend />;
             break;
+        // case 'addExpense':
+        //     component = <AddExpense />;
+        //     break;
         default:
             return null;
     }

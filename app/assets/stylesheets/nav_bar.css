@@ -97,6 +97,10 @@
     line-height: 21px;
 }
 
+#ls-dashboard-link img {
+    margin-right: 2px;
+}
+
 #ls-recent-link {
     margin: 0 0 10px;
     padding: 3px 8px 5px 5px;
@@ -238,6 +242,10 @@
 .icon-list::before {
     margin-top: 2px;
     margin-right: 1px;
+}
+
+.icon-flag::before {
+    margin-right: 2px;
 }
 
 .friend:hover {

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import AddFriend from './add_friend';
 import { fetchUsers } from '../../actions/users_actions';
-import { addFriend } from '../../actions/dashboard_actions';
+import { addFriend } from '../../actions/friendship_actions';
 
 const mapStateToProps = (state) => {
     return {

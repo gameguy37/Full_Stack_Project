@@ -77,3 +77,28 @@
     height: 34px;
     margin-bottom: 4px;
 }
+
+#friend-balances {
+    display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    font-size: 14px;
+    color: #999;
+    font-weight: bold;
+}
+
+#you-owe, #you-are-owed {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    line-height: 36px;
+}
+
+#you-owe {
+
+}
+
+#you-are-owed {
+    text-align: right;
+}

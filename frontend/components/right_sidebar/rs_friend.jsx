@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { deleteFriend } from '../../actions/dashboard_actions';
+import { deleteFriend } from '../../actions/friendship_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
