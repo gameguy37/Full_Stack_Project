@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import AddFriend from '../../components/nav_bar/add_friend_container';
+import AddFriend from '../../components/left_sidebar/add_friend_container';
 
 const mapStateToProps = state => {
     return {

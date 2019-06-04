@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import LeftSidebar from './left_sidebar_container';
+import LeftSidebar from '../left_sidebar/left_sidebar_container';
 import RightSidebar from '../right_sidebar/right_sidebar';
 
 class NavBar extends React.Component {
