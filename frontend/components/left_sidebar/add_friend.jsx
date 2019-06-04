@@ -16,7 +16,8 @@ export default class AddFriend extends React.Component {
         const allFriendIds = acceptedFriendIds.concat(pendingFriendIds);
         
         const notFriends = this.props.users.map( user => {
-            if (!allFriendIds.includes(user.id)) {
+            debugger
+            if ( (!allFriendIds.includes(user.id)) && (user.id !== this.props.currentUserId)) {
                 return (
                     <AddFriendItem key={user.id} friend={user} />
                 );
@@ -24,7 +25,7 @@ export default class AddFriend extends React.Component {
         });
         
         let users;
-        if (allFriendIds.length === this.props.users.length) {
+        if (allFriendIds.length === (this.props.users.length -1 )) {
             users = "You are friends with everyone!";
         } else {
             users = "Users";
