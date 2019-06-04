@@ -7,7 +7,6 @@ import { fetchPayments, fetchPayment, newPayment, editPayment, deletePayment } f
 
 
 const mapStateToProps = state => {
-    debugger
     return {
         bills: Object.values(state.entities.bills),
         payments: Object.values(state.entities.payments),

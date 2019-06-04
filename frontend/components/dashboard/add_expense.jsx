@@ -11,7 +11,6 @@ export default class AddExpense extends React.Component {
         // const allFriendIds = acceptedFriendIds.concat(pendingFriendIds);
 
         // const notFriends = this.props.users.map(user => {
-        //     debugger
         //     if ((!allFriendIds.includes(user.id)) && (user.id !== this.props.currentUserId)) {
         //         return (
         //             <AddFriendItem key={user.id} friend={user} />
