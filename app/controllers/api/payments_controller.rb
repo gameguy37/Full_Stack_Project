@@ -2,8 +2,13 @@ class Api::PaymentsController < ApplicationController
 
     def index
         @payments = Payment.all
-        render json: @payments
+        render :index
     end
+
+    # def show
+    #     @payment = Payment.find(params[:id])
+    #     render :show
+    # end
 
     def create
         @payment = Payment.create(payment_params)
@@ -24,8 +29,9 @@ class Api::PaymentsController < ApplicationController
     end
 
     def destroy
-        @payment = current_user.payments.find(params[:id])
+        @payment = Payment.find(params[:id])
         @payment.destroy
+        render json: {}
     end
 
     private

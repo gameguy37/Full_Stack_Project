@@ -7,7 +7,8 @@ import { fetchBills, fetchBill, newBill, editBill, deleteBill } from '../../acti
 const mapStateToProps = state => {
     debugger
     return {
-
+        bills: Object.values(state.entities.bills),
+        
     };
 }
 
@@ -30,6 +31,10 @@ class Dashboard extends React.Component {
             ui: { modal: null },
         };
 
+    }
+
+    componentDidMount() {
+        this.props.fetchBills();
     }
 
     render() {

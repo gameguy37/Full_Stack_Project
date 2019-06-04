@@ -14,15 +14,12 @@ export default (state = {}, action) => {
             return merge({}, state, { [action.bill.id]: action.bill });
         // case RECEIVE_FRIENDSHIP:
         // case DELETE_FRIENDSHIP:
-        case REMOVE_BILL:
-            let newState = merge({}, state);
-            delete newState[action.bill.id];
-            newState[action.bill.id] = action.bill;
-            return newState;
+        // case REMOVE_BILL:
         //     let newState = merge({}, state);
-        //     delete newState[action.user.id];
-        //     newState[action.user.id] = action.user;
+        //     delete newState[action.bill.id];
+        //     newState[action.bill.id] = action.bill;
         //     return newState;
+        //     
         default:
             return state;
     }

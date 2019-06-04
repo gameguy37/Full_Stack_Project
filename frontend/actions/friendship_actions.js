@@ -17,6 +17,6 @@ const deleteFriendship = user => {
     }
 }
 
-export const addFriend = friendee => dispatch => createFriendship(friendee).then(user => dispatch(receiveFriendship(user)));
+export const addFriend = friendee => dispatch => createFriendship(friendee).then( user => dispatch(receiveFriendship(user)));
 
-export const deleteFriend = id => dispatch => destroyFriendship(id).then( (user) => dispatch(deleteFriendship(user)));
+export const deleteFriend = id => dispatch => destroyFriendship(id).then( user => dispatch(deleteFriendship(user)));

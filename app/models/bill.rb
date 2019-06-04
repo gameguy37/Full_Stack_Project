@@ -21,11 +21,13 @@ class Bill < ApplicationRecord
     has_many :comments,
         primary_key: :id,
         foreign_key: :bill_id,
-        class_name: 'Comment'
+        class_name: 'Comment',
+        dependent: :destroy
 
     has_many :payments,
         primary_key: :id,
         foreign_key: :bill_id,
-        class_name: 'Payment'
+        class_name: 'Payment',
+        dependent: :destroy
 
 end

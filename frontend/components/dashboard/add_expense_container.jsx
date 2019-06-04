@@ -4,7 +4,8 @@ import AddExpense from './add_expense';
 
 const mapStateToProps = (state) => {
     return {
-        // users: Object.values(state.entities.users),
+        // bills: Object.values(state.entities.bills),
+
         // acceptedFriendIds: state.entities.users[state.session.id].acceptedFriendIds,
         // pendingFriendIds: state.entities.users[state.session.id].pendingFriendIds,
         // currentUserId: state.session.id
