@@ -248,6 +248,22 @@
     font-weight: 700;
 }
 
+.addfriend-box {
+    /* min-height: 200px; */
+    background-color: white;
+    border: 1px solid #999999;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.addfriend-box h1 {
+    text-align: center;
+    font-size: 18px;
+}
+
 .add-friend-flex {
     display: flex;
     justify-content: space-between;

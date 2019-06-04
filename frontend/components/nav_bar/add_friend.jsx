@@ -22,13 +22,18 @@ export default class AddFriend extends React.Component {
                 );
             }
         });
+        
+        let users;
+        if (allFriendIds.length === this.props.users.length) {
+            users = "You are friends with everyone!";
+        } else {
+            users = "Users";
+        }
 
         return (
-            <div>
-                <h1>Users</h1>
-                <div className='addFriend'>
-                    {notFriends}
-                </div>
+            <div className='addfriend-box'>
+                <h1>{users}</h1>
+                {notFriends}
             </div>
         );
     }
