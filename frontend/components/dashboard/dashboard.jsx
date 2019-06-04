@@ -3,11 +3,14 @@ import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 import DashboardItem from '../dashboard/dashboard_item';
 import { fetchBills, fetchBill, newBill, editBill, deleteBill } from '../../actions/bills_actions';
+import { fetchPayments, fetchPayment, newPayment, editPayment, deletePayment } from '../../actions/payments_actions';
+
 
 const mapStateToProps = state => {
     debugger
     return {
         bills: Object.values(state.entities.bills),
+        payments: Object.values(state.entities.payments),
         
     };
 }
@@ -20,6 +23,11 @@ const mapDispatchToProps = dispatch => {
         newBill: (bill) => dispatch(newBill(bill)),
         editBill: (bill) => dispatch(editBill(bill)),
         deleteBill: (id) => dispatch(deleteBill(id)),
+        fetchPayments: () => dispatch(fetchPayments()),
+        fetchPayment: (id) => dispatch(fetchPayment(id)),
+        newPayment: (payment) => dispatch(newPayment(payment)),
+        editPayment: (payment) => dispatch(editPayment(payment)),
+        deletePayment: (id) => dispatch(deletePayment(id)),
     };
 }
 
@@ -35,6 +43,7 @@ class Dashboard extends React.Component {
 
     componentDidMount() {
         this.props.fetchBills();
+        this.props.fetchPayments();
     }
 
     render() {
