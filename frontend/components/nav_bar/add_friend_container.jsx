@@ -5,7 +5,9 @@ import { addFriend } from '../../actions/dashboard_actions';
 
 const mapStateToProps = (state) => {
     return {
-        users: Object.values(state.entities.users)
+        users: Object.values(state.entities.users),
+        acceptedFriendIds: state.entities.users[state.session.id].acceptedFriendIds,
+        pendingFriendIds: state.entities.users[state.session.id].pendingFriendIds,
     };
 };
 

@@ -11,19 +11,23 @@ export default class AddFriend extends React.Component {
     }
 
     render() {
-        const { users } = this.props;
-        debugger
-        const friends = users.map( (user) => {
-            return (
-                <AddFriendItem key={user.id} friend={user} />
-            );
+        const { acceptedFriendIds } = this.props;
+        const { pendingFriendIds } = this.props;
+        const allFriendIds = acceptedFriendIds.concat(pendingFriendIds);
+        
+        const notFriends = this.props.users.map( user => {
+            if (!allFriendIds.includes(user.id)) {
+                return (
+                    <AddFriendItem key={user.id} friend={user} />
+                );
+            }
         });
 
         return (
             <div>
                 <h1>Users</h1>
                 <div className='addFriend'>
-                    {friends}
+                    {notFriends}
                 </div>
             </div>
         );
