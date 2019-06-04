@@ -1,20 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { openModal } from '../modal/modal';
 
 const mapStateToProps = state => {
     return {
-
+        
     };
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        openModal: () => dispatch(openModal())
     };
 }
 
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            ui: { modal: null },
+        };
+
     }
 
     render() {
@@ -22,7 +29,15 @@ class Dashboard extends React.Component {
         return (
             <>
                 <div id="dashboard-box">
-                    Dashboard
+                    <div id="dashboard-topbar">
+                        <h1>Dashboard</h1>
+                        <div id="dashboard-topbar-btns">
+                            <a id="add-expense-btn" onClick={() => this.props.openModal('addExpense')} href="#">Add an expense</a>
+                        </div>
+                    </div>
+                    <div id="dashboard-balances-bar">
+
+                    </div>
                 </div>
             </>
         );

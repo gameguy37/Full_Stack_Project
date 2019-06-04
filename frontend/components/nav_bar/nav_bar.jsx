@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import LeftSidebar from '../left_sidebar/left_sidebar_container';
 import RightSidebar from '../right_sidebar/right_sidebar';
+import Dashboard from '../dashboard/dashboard';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class NavBar extends React.Component {
                     <LeftSidebar />
                 </section>
                 <section id="center-box">
-
+                    <Dashboard />
                 </section>
                 <section id="right-sidebar">
                     <RightSidebar />

@@ -8,6 +8,8 @@
     text-shadow: 0 -1px 0 #39a385;
     color: white;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
 }
 
 .nav-div {
@@ -15,6 +17,7 @@
     height: 33px;
     max-width: 960px;
     position: relative;
+    z-index: 10;
 }
 
 .nav-user-dropdown {
@@ -62,7 +65,8 @@
     width: 558px;
     height: 96%;
     position: absolute;
-    top: 35px;
+    z-index: 9;
+    top: 33px;
     left: 50%;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
