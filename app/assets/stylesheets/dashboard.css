@@ -96,9 +96,96 @@
 }
 
 #you-owe {
+    list-style: none;
+}
 
+#you-owe ul:first-child {
+    margin-top: 4px;
 }
 
 #you-are-owed {
     text-align: right;
+    list-style: none;
+}
+
+#you-are-owed ul:first-child {
+    margin-top: 4px;
+}
+
+.left-side {
+    display: flex;
+    list-style: none;
+    margin-left: -1px;
+}
+
+.left-side span {
+    color: rgb(255, 101, 47);
+    line-height: 16px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+a.left-side {
+    display: block;
+    padding: 7px 13px 7px 0px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+}
+
+.left-side img {
+    border-radius: 16px;
+    border: 1px solid #ccc;
+    margin: 3px 10px 0 0;
+    float: left;
+}
+
+.left-side span strong {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.right-side {
+    display: flex;
+    list-style: none;
+}
+
+a.right-side {
+    display: block;
+    padding: 7px 13px 7px 13px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+}
+
+.right-side img {
+    border-radius: 16px;
+    border: 1px solid #ccc;
+    margin: 3px 10px 0 2px;
+    float: left;
+}
+
+.right-side span {
+    color: #5bc5a7;
+    line-height: 16px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 2px;
+}
+
+.right-side span strong {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#dashboard-item-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 18px;
+    font-size: 16px;
+    text-align: left;
+    font-weight: normal;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

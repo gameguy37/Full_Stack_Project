@@ -26,7 +26,7 @@ class LeftSidebar extends React.Component {
             );
         })
 
-        const pendingFriends = pendingFriendIds.map(id => {
+        const pendingFriends = pendingFriendIds.map( id => {
             return (
                 <FriendListItem key={id} userId={id} />
             );
