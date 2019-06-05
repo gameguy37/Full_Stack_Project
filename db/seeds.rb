@@ -42,6 +42,9 @@ b2 = Bill.create(biller_id: u0.id, category: 'Uncategorized: General', descripti
 b3 = Bill.create(biller_id: u0.id, category: 'Home: Electronics', description: 'Plasma TV', total_amount: 200.00)
 b4 = Bill.create(biller_id: u0.id, category: 'Uncategorized: General', description: 'Generic expense, split 4 ways', total_amount: 100.00)
 b5 = Bill.create(biller_id: u1.id, category: 'Uncategorized: General', description: 'Test expense', total_amount: 3000.00)
+b6 = Bill.create(biller_id: u9.id, category: 'Uncategorized: General', description: 'Test expense', total_amount: 11.00)
+b7 = Bill.create(biller_id: u10.id, category: 'Uncategorized: General', description: 'Test expense', total_amount: 95.00)
+b8 = Bill.create(biller_id: u11.id, category: 'Uncategorized: General', description: 'Test expense', total_amount: 1000000.00)
 
 p1 = Payment.create(user_id: u1.id, bill_id: b1.id, initial_amount: 35.50, paid_amount: 10.00)
 p2 = Payment.create(user_id: u2.id, bill_id: b2.id, initial_amount: 260.00, paid_amount: 260.00)
@@ -51,8 +54,11 @@ p5 = Payment.create(user_id: u5.id, bill_id: b4.id, initial_amount: 25.00, paid_
 p6 = Payment.create(user_id: u6.id, bill_id: b4.id, initial_amount: 25.00, paid_amount: 0.00)
 p7 = Payment.create(user_id: u7.id, bill_id: b4.id, initial_amount: 25.00, paid_amount: 0.00)
 p8 = Payment.create(user_id: u7.id, bill_id: b5.id, initial_amount: 1000.00, paid_amount: 0.00)
-p8 = Payment.create(user_id: u8.id, bill_id: b5.id, initial_amount: 1000.00, paid_amount: 1000.00)
-p8 = Payment.create(user_id: u9.id, bill_id: b5.id, initial_amount: 1000.00, paid_amount: 500.00)
+p9 = Payment.create(user_id: u8.id, bill_id: b5.id, initial_amount: 1000.00, paid_amount: 1000.00)
+p10 = Payment.create(user_id: u9.id, bill_id: b5.id, initial_amount: 1000.00, paid_amount: 500.00)
+p11 = Payment.create(user_id: u0.id, bill_id: b6.id, initial_amount: 11.00, paid_amount: 0.00)
+p12 = Payment.create(user_id: u0.id, bill_id: b7.id, initial_amount: 95.00, paid_amount: 0.00)
+p13 = Payment.create(user_id: u0.id, bill_id: b8.id, initial_amount: 1000000.00, paid_amount: 0.00)
 
 c1 = Comment.create(author_id: u1.id, bill_id: b1.id, body: "Thanks for the tickets, buddy!")
 c2 = Comment.create(author_id: u0.id, bill_id: b2.id, body: "That is a $200 plasma TV you just killed!!! Goof luck paying me back on your zero dollars a year salary plus benefits, babe!")
