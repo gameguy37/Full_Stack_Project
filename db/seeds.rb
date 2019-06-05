@@ -44,7 +44,7 @@ b4 = Bill.create(biller_id: u0.id, category: 'Uncategorized: General', descripti
 b5 = Bill.create(biller_id: u1.id, category: 'Uncategorized: General', description: 'Test expense', total_amount: 3000.00)
 b6 = Bill.create(biller_id: u9.id, category: 'Uncategorized: General', description: 'Test expense', total_amount: 11.00)
 b7 = Bill.create(biller_id: u10.id, category: 'Uncategorized: General', description: 'Test expense', total_amount: 95.00)
-b8 = Bill.create(biller_id: u11.id, category: 'Uncategorized: General', description: 'Test expense', total_amount: 1000000.00)
+b8 = Bill.create(biller_id: u8.id, category: 'Uncategorized: General', description: 'Test expense', total_amount: 1000000.00)
 
 p1 = Payment.create(user_id: u1.id, bill_id: b1.id, initial_amount: 35.50, paid_amount: 10.00)
 p2 = Payment.create(user_id: u2.id, bill_id: b2.id, initial_amount: 260.00, paid_amount: 260.00)
