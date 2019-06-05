@@ -82,12 +82,16 @@
     top: 35px;
     right: 50%;
     margin-right: 279px;
+    /* margin-top: -2px;
+    margin-left: 1px; */
 }
 
 #left-sidebar-box {
+    margin-top: -2px;
+    margin-left: 1px;
     display: flex;
     flex-direction: column;
-    width: 168px;
+    width: 180px;
 }
 
 #ls-dashboard-link {
@@ -183,6 +187,7 @@
     padding: 4px 5px;
     text-rendering: optimizeLegibility;
     font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 158px;
 }
 
 .ls-header:hover {

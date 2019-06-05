@@ -61,5 +61,5 @@ p12 = Payment.create(user_id: u0.id, bill_id: b7.id, initial_amount: 95.00, paid
 p13 = Payment.create(user_id: u0.id, bill_id: b8.id, initial_amount: 1000000.00, paid_amount: 0.00)
 
 c1 = Comment.create(author_id: u1.id, bill_id: b1.id, body: "Thanks for the tickets, buddy!")
-c2 = Comment.create(author_id: u0.id, bill_id: b2.id, body: "That is a $200 plasma TV you just killed!!! Goof luck paying me back on your zero dollars a year salary plus benefits, babe!")
+c2 = Comment.create(author_id: u0.id, bill_id: b2.id, body: "That is a $200 plasma TV you just killed!!! Good luck paying me back on your zero dollars a year salary plus benefits, babe!")
 c3 = Comment.create(author_id: u5.id, bill_id: b4.id, body: "Here's $20 of the $25 I owe")

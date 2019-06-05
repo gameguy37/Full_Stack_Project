@@ -50,6 +50,10 @@ class Dashboard extends React.Component {
     }
 
     render() {
+
+        let totalBalanceUserIsOwed = 0;
+        let totalBalanceUserOwes = 0;
+
         const friendsWhoOwe = Object.values(self.props.users).map( user => {
             let userOwesTotal = 0;
             let userIsOwedTotal = 0;
@@ -76,6 +80,8 @@ class Dashboard extends React.Component {
             }
             
             if ((userIsOwedTotal - userOwesTotal) > 0) {
+                totalBalanceUserIsOwed += userIsOwedTotal;
+                totalBalanceUserOwes += userOwesTotal;
                 return (
                     <DashboardItem key={user.id} friendId={user.id} amount={userIsOwedTotal.toFixed(2)} className="right-side" />
                 );
@@ -109,12 +115,25 @@ class Dashboard extends React.Component {
             }
 
             if ((userIsOwedTotal - userOwesTotal) < 0) {
+                totalBalanceUserIsOwed += userIsOwedTotal;
+                totalBalanceUserOwes += userOwesTotal;
                 return (
                     <DashboardItem key={user.id} friendId={user.id} amount={userOwesTotal.toFixed(2)} className="left-side"/>
                 );
             }
         })
         
+        let totalBalance;
+        let negativeBalance;
+
+        if (totalBalanceUserIsOwed - totalBalanceUserOwes < 0) {
+            totalBalance = "negative";
+            negativeBalance = "- ";
+        } else {
+            totalBalance = "positive";
+            negativeBalance = "";
+        }
+
         return (
             <>
                 <div id="dashboard-box">
@@ -127,15 +146,15 @@ class Dashboard extends React.Component {
                     <div id="dashboard-balances-bar">
                         <div className="reactive-balances">
                             total balance
-                            <span>AMOUNT</span>
+                            <span id={totalBalance}>{negativeBalance}${Math.abs((totalBalanceUserIsOwed - totalBalanceUserOwes)).toFixed(2)}</span>
                         </div>
                         <div className="reactive-balances">
                             you owe
-                            <span>AMOUNT</span>
+                            <span id="total-you-owe">${totalBalanceUserOwes.toFixed(2)}</span>
                         </div>
                         <div className="reactive-balances">
                             you are owed
-                            <span>AMOUNT</span>
+                            <span id="total-owed">${totalBalanceUserIsOwed.toFixed(2)}</span>
                         </div>
                     </div>
                     <div id="friend-balances">

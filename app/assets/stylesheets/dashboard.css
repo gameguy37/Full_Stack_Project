@@ -78,6 +78,22 @@
     margin-bottom: 4px;
 }
 
+#total-owed {
+    color: rgb(91, 197, 167);
+}
+
+#total-you-owe {
+    color: rgb(255, 101, 47);
+}
+
+#positive {
+    color: rgb(91, 197, 167);
+}
+
+#negative {
+    color: rgb(255, 101, 47);
+}
+
 #friend-balances {
     display: flex;
     padding-left: 15px;
