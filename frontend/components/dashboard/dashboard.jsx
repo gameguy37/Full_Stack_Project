@@ -17,7 +17,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        openModal: () => dispatch(openModal()),
+        openModal: (modal) => dispatch(openModal(modal)),
         fetchUsers: () => dispatch(fetchUsers()),
         fetchBills: () => dispatch(fetchBills()),
         // fetchBill: (id) => dispatch(fetchBill(id)),
@@ -54,7 +54,7 @@ class Dashboard extends React.Component {
         let totalBalanceUserIsOwed = 0;
         let totalBalanceUserOwes = 0;
 
-        const friendsWhoOwe = Object.values(self.props.users).map( user => {
+        let friendsWhoOwe = Object.values(self.props.users).map( user => {
             let userOwesTotal = 0;
             let userIsOwedTotal = 0;
 
@@ -89,7 +89,7 @@ class Dashboard extends React.Component {
 
         })
 
-        const friendsWhoAreOwed = Object.values(self.props.users).map( user => {
+        let friendsWhoAreOwed = Object.values(self.props.users).map( user => {
             let userOwesTotal = 0;
             let userIsOwedTotal = 0;
             
@@ -122,7 +122,7 @@ class Dashboard extends React.Component {
                 );
             }
         })
-        
+
         let totalBalance;
         let negativeBalance;
 

@@ -1,21 +1,22 @@
 import { connect } from 'react-redux';
 import AddExpense from './add_expense';
-// import { addExpense } from '../../actions/bills_actions';
+import { newBill } from '../../actions/bills_actions';
+import { newPayment } from '../../actions/payments_actions';
+
 
 const mapStateToProps = (state) => {
     return {
-        // bills: Object.values(state.entities.bills),
-
-        // acceptedFriendIds: state.entities.users[state.session.id].acceptedFriendIds,
-        // pendingFriendIds: state.entities.users[state.session.id].pendingFriendIds,
-        // currentUserId: state.session.id
+        users: Object.values(state.entities.users),
+        acceptedFriendIds: state.entities.users[state.session.id].acceptedFriendIds,
+        pendingFriendIds: state.entities.users[state.session.id].pendingFriendIds,
+        currentUserId: state.session.id,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        addExpense: bill => dispatch(addExpense(bill)),
-        // fetchUsers: () => dispatch(fetchUsers()),
+        newBill: bill => dispatch(newBill(bill)),
+        newPayment: payment => dispatch(newPayment(payment)),
     };
 };
 

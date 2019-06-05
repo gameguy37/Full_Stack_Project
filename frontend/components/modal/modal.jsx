@@ -27,9 +27,9 @@ const Modal = ({ modal, closeModal }) => {
         case 'addFriend':
             component = <AddFriend />;
             break;
-        // case 'addExpense':
-        //     component = <AddExpense />;
-        //     break;
+        case 'addExpense':
+            component = <AddExpense />;
+            break;
         default:
             return null;
     }
