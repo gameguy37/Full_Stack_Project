@@ -41,19 +41,19 @@ const FriendShowItem = (props) => {
     let billAmount;
 
     if (props.bill && props.payment && props.friend && (props.payment.bill_id === props.bill.id) && (props.payment.user_id === props.friendId) && (props.bill.biller_id === props.currentUser.id)) {
-        owedAmount = (parseInt(props.payment.initial_amount - props.payment.paid_amount)).toFixed(2);
+        owedAmount = (parseFloat(props.payment.initial_amount - props.payment.paid_amount)).toFixed(2);
         reactiveId = "green";
         description = props.bill.description;
         friendName = "you"
-        billAmount = (parseInt(props.bill.total_amount)).toFixed(2);
+        billAmount = (parseFloat(props.bill.total_amount)).toFixed(2);
     }
     
     if (props.bill && props.payment && props.friend && (props.payment.bill_id === props.bill.id ) && (props.bill.biller_id === props.friendId) && (props.payment.user_id === props.currentUser.id)) {
-        owedAmount = (parseInt(props.payment.initial_amount)).toFixed(2);
+        owedAmount = (parseFloat(props.payment.initial_amount)).toFixed(2);
         reactiveId = "orange";
         description = props.bill.description;
         friendName = props.friend.name;
-        billAmount = (parseInt(props.bill.total_amount)).toFixed(2);
+        billAmount = (parseFloat(props.bill.total_amount)).toFixed(2);
     }
 
     return (
