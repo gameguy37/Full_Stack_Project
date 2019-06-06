@@ -1,51 +1,90 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { deleteBill } from '../../actions/bills_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        friendId: ownProps.friendId,
         friend: state.entities.users[ownProps.friendId],
         amount: ownProps.amount,
         className: ownProps.className,
+        bill: ownProps.bill,
+        payment: ownProps.payment,
+        currentUser: state.entities.users[state.session.id]
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        deleteBill: bill => dispatch(deleteBill(bill))
     }
 }
 
 const FriendShowItem = (props) => {
-    if (!props.amount) {
+    if (!props.bill) {
         return null;
     }
-    
-    // if (totalBalanceUserIsOwed - totalBalanceUserOwes < 0) {
-        //     totalBalance = "negative";
-        //     negativeBalance = "- ";
-        // } else {
-        //     totalBalance = "positive";
-        //     negativeBalance = "";
-        // }
-        // console.log(friendOwesYou);
-    // }
 
-    // let balanceDescription;
-    // if (props.className === "x-lent-you") {
-    //     balanceDescription = `you owe `;
-    // } else {
-    //     balanceDescription = `owes you `;
-    // }
+    let whoLentWho;
+    if (props.friend && props.className === "x-owes-you") {
+        whoLentWho = props.friend.name + " owes you"
+    } else if (props.friend && props.className && props.className === "you-owe-x") {
+        whoLentWho = "you owe " + props.friend.name
+    } else {
+        whoLentWho = null;
+    }
+
+    let owedAmount;
+    let reactiveId;
+    let description;
+    let friendName;
+    let billAmount;
+
+    if (props.bill && props.payment && props.friend && (props.payment.bill_id === props.bill.id) && (props.payment.user_id === props.friendId) && (props.bill.biller_id === props.currentUser.id)) {
+        owedAmount = (parseInt(props.payment.initial_amount - props.payment.paid_amount)).toFixed(2);
+        reactiveId = "green";
+        description = props.bill.description;
+        friendName = "you"
+        billAmount = (parseInt(props.bill.total_amount)).toFixed(2);
+    }
+    
+    if (props.bill && props.payment && props.friend && (props.payment.bill_id === props.bill.id ) && (props.bill.biller_id === props.friendId) && (props.payment.user_id === props.currentUser.id)) {
+        owedAmount = (parseInt(props.payment.initial_amount)).toFixed(2);
+        reactiveId = "orange";
+        description = props.bill.description;
+        friendName = props.friend.name;
+        billAmount = (parseInt(props.bill.total_amount)).toFixed(2);
+    }
 
     return (
         
         <li className={props.className}>
-            Tootlio
-            {/* <Link to={`/friends/${props.friend.id}`} className={props.className}> */}
-                {/* <img src={window.profilePic} height="30px" />
-                <div id="dashboard-item-info">
-                    {props.friend.name}
-                    {<span>{balanceDescription}<strong>${props.amount}</strong></span>}
-                </div> */}
-            {/* </Link> */}
+            <div id="friend-show-item">
+                <div id="friend-show-left">
+                    <div id="fsl-date">
+                        <span id="fsl-date-month">JUN</span>
+                        <span id="fsl-date-num">05</span>
+                    </div>
+                    <img src={window.uncategorized} />
+                    <span id="description">{description}</span>
+                </div>
+                <div id="friend-show-right">
+                    <div id="this-person-paid">
+                        <span>{friendName} paid</span>
+                        <span id="tpp-amt">${billAmount}</span>
+                    </div>
+                    <div id="amount-owed">
+                        <span>{whoLentWho}</span>
+                        <span id={reactiveId}>{owedAmount}</span>
+                    </div>
+                </div>
+                <div id="friend-show-delete">
+                    <button onClick={() => props.deleteBill(props.bill.id)}>Delete</button>
+                </div>
+            </div>
         </li>
         
     );
 };
 
-export default connect(mapStateToProps)(FriendShowItem);
+export default connect(mapStateToProps, mapDispatchToProps)(FriendShowItem);

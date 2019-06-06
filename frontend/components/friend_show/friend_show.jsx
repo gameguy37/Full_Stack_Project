@@ -51,23 +51,27 @@ class FriendShow extends React.Component {
     }
 
     render() {
+
         let friendOwesYou = []
         let youOweFriend = []
-        
-        self.props.currentUser.paidBillIds.map(billId => {
-            Object.values(self.props.payments).forEach(payment => {
-                if ((payment.user_id === self.props.friendId) && (payment.bill_id === billId)) {
-                    friendOwesYou = friendOwesYou.concat(<FriendShowItem key={billId} friendId={self.props.friendId} amount={(payment.initial_amount - payment.paid_amount).toFixed(2)} className="x-owes-you" />)
-                }
+
+        self.props.currentUser.paidBillIds.forEach(billId => {
+            Object.values(self.props.bills).forEach(bill => {
+                Object.values(self.props.payments).forEach(payment => {
+                    if ((payment.user_id === self.props.friendId) && (bill.biller_id === self.props.currentUser.id) && (payment.bill_id === billId) && (bill.id === billId)) {
+                        friendOwesYou = friendOwesYou.concat(<FriendShowItem key={bill.id} friendId={self.props.friendId} amount={payment.initial_amount} bill={bill} payment={payment} className="x-owes-you" />)
+                    }
+                })
             })
         })
 
-        self.props.currentUser.paymentIds.map(paymentId => {
-            Object.values(self.props.bills).forEach(bill => {
-                if ((bill.biller_id === self.props.friendId) && (self.props.currentUser.paymentIds.includes(paymentId))) {
-                    let payment = self.props.payments[paymentId];
-                    youOweFriend = youOweFriend.concat(<FriendShowItem key={paymentId} friendId={self.props.friendId} amount={(payment.initial_amount - payment.paid_amount).toFixed(2)} className="you-owe-x" />)
-                }
+        self.props.currentUser.paymentIds.forEach(paymentId => {
+            Object.values(self.props.payments).forEach(payment => {
+                Object.values(self.props.bills).forEach(bill => {
+                    if ((bill.biller_id === self.props.friendId) && (payment.user_id === self.props.currentUser.id) && (payment.bill_id === bill.id) && (payment.id === paymentId)) {
+                        youOweFriend = youOweFriend.concat(<FriendShowItem key={paymentId} friendId={self.props.friendId} amount={payment.initial_amount} bill={bill} payment={payment} className="you-owe-x" />)
+                    }
+                })
             })
         })
 
@@ -99,19 +103,8 @@ class FriendShow extends React.Component {
                             <a id="add-expense-btn" onClick={() => this.props.openModal('addExpense')} href="#">Add an expense</a>
                         </div>
                     </div>
-                    <div id="dashboard-balances-bar">
-                        {/* <div className="reactive-balances">
-                            total balance
-                            <span id={totalBalance}>{negativeBalance}${Math.abs((totalBalanceUserIsOwed - totalBalanceUserOwes)).toFixed(2)}</span>
-                        </div>
-                        <div className="reactive-balances">
-                            you owe
-                            <span id="total-you-owe">${totalBalanceUserOwes.toFixed(2)}</span>
-                        </div>
-                        <div className="reactive-balances">
-                            you are owed
-                            <span id="total-owed">${totalBalanceUserIsOwed.toFixed(2)}</span>
-                        </div> */}
+                    <div id="friend-show-date-bar">
+                        <span>JUNE 2019</span>
                     </div>
                     <div id="friend-show-transactions">
                         {friendOwesYou}
