@@ -148,6 +148,8 @@ a.left-side {
     font-size: 16px;
     text-decoration: none;
     color: #000;
+    border-right: 1px solid #eee;
+    margin-right: -1px;
 }
 
 .left-side img {
@@ -169,10 +171,16 @@ a.left-side {
 
 a.right-side {
     display: block;
-    padding: 7px 13px 7px 13px;
+    padding: 7px 13px 7px 12px;
     font-size: 16px;
     text-decoration: none;
     color: #000;
+    border-left: 1px solid #eee;
+    margin-left: 0px;
+}
+
+a.right-side:hover {
+    background-color: #f8f8f8;
 }
 
 .right-side img {

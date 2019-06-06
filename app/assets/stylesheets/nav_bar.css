@@ -114,7 +114,7 @@
 
 #ls-all-link {
     line-height: 18px;
-    padding: 3px 8px 2px 8px;
+    padding: 2px 8px 2px 8px;
     font-size: 14px;
 }
 
@@ -250,7 +250,9 @@
 }
 
 .icon-flag::before {
-    margin-right: 2px;
+    width: 16px;
+    margin-right: 1px;
+    margin-left: 1px;
 }
 
 .friend:hover {
