@@ -36,13 +36,13 @@ const FriendShowItem = (props) => {
         
         <li className={props.className}>
             Tootlio
-            {/* <Link to={`/friends/${props.friend.id}`} className={props.className}>
-                <img src={window.profilePic} height="30px" />
+            {/* <Link to={`/friends/${props.friend.id}`} className={props.className}> */}
+                {/* <img src={window.profilePic} height="30px" />
                 <div id="dashboard-item-info">
                     {props.friend.name}
                     {<span>{balanceDescription}<strong>${props.amount}</strong></span>}
-                </div>
-            </Link> */}
+                </div> */}
+            {/* </Link> */}
         </li>
         
     );

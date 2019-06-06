@@ -133,7 +133,7 @@ class Dashboard extends React.Component {
             totalBalance = "positive";
             negativeBalance = "";
         }
-
+        console.log(friendsWhoOwe);
         return (
             <>
                 <div id="dashboard-box">

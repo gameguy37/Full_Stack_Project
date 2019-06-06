@@ -8,6 +8,7 @@ export default class AddExpense extends React.Component {
         this.state = {
             amount: '',
             selfChecked: false,
+            selfPaid: false,
             payerIds: [],
         }
 
@@ -43,6 +44,7 @@ export default class AddExpense extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.newBill({ bill: { total_amount: this.state.amount, description: "default", category: "default" }, payment: { payer_ids: this.state.payerIds, self_checked: this.state.selfChecked } });
+        this.props.closeModal();
     }
 
     render() {
@@ -66,10 +68,10 @@ export default class AddExpense extends React.Component {
 
         return (
             <div className='add-expense-box'>
-                <h1>Choose friends with whom to split expense:</h1>
+                <h1>Choose friends to split expense:</h1>
                 <br/>
                 <br/>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit= {this.handleSubmit}>
                     <input type="text" value={this.state.amount} onChange={this.change("amount")} placeholder="Enter an amount" />
                     <br/>
                     <br/>

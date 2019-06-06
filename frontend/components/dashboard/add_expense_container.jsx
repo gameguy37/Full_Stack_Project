@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import AddExpense from './add_expense';
 import { newBill } from '../../actions/bills_actions';
+import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -14,6 +15,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         newBill: payload => dispatch(newBill(payload)),
+        closeModal: () => dispatch(closeModal()),
     };
 };
 

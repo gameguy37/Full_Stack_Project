@@ -16,18 +16,28 @@ class Api::BillsController < ApplicationController
             @payer_ids = payment_params[:payer_ids]
             @self_checked = payment_params[:self_checked]
             
-            if @self_checked
+            if @self_checked == "true"
                 @slices = @payer_ids.length + 1
             else
                 @slices = @payer_ids.length
             end
 
             @amount_per_slice = (bill_params[:total_amount].to_i / @slices)
-
+        
             @payer_ids.each do |id|
                 Payment.create(bill_id: @bill.id, user_id: id.to_i, initial_amount: @amount_per_slice, paid_amount: 0.00)
             end
 
+            @payments = Payment.all.where(bill_id: @bill.id)
+
+            @users = []
+
+            @payments.each do |payment|
+                @users << User.find(payment.user_id)
+            end
+
+            @users << User.find(@bill.biller_id)
+            
             render :show
         else
             render json: ["Unable to create bill"], status: 422

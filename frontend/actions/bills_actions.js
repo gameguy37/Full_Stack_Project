@@ -3,6 +3,7 @@ import { getBills, getBill, createBill, updateBill, destroyBill } from '../util/
 export const RECEIVE_BILLS = 'RECEIVE_BILLS';
 export const RECEIVE_BILL = 'RECEIVE_BILL';
 export const REMOVE_BILL = 'DELETE_BILL';
+export const RECEIVE_BILL_PAYLOAD = 'RECEIVE_BILL_PAYLOAD';
 
 const receiveBills = bills => ({
     type: RECEIVE_BILLS,
@@ -12,6 +13,13 @@ const receiveBills = bills => ({
 const receiveBill = bill => ({
     type: RECEIVE_BILL,
     bill
+});
+
+const receiveBillPayload = payload => ({
+    type: RECEIVE_BILL_PAYLOAD,
+    bill: payload.bill,
+    payments: payload.payments,
+    users: payload.users
 });
 
 const removeBill = bill => ({
@@ -28,7 +36,7 @@ export const fetchBill = id => dispatch => {
 };
 
 export const newBill = payload => dispatch => {
-    return createBill(payload).then( response => dispatch(receiveBill(response.bill)));
+   return createBill(payload).then( payload => dispatch(receiveBillPayload(payload)));
 };
 
 export const editBill = bill => dispatch => {

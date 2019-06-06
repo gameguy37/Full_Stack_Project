@@ -16,6 +16,12 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
+// const handleSubmit = () => {
+//     addFriend();
+//     closeModal();
+
+// }
+
 const AddFriendItem = (props) => {
     if (!props.friend) {
         return null;
