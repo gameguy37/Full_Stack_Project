@@ -12,19 +12,19 @@ export const getBill = (id) => {
     });
 };
 
-export const createBill = bill => {
+export const createBill = payload => {
     return $.ajax({
         method: 'POST',
         url: 'api/bills',
-        data: bill
+        data: payload
     });
 };
 
-export const updateBill = bill => {
+export const updateBill = payload => {
     return $.ajax({
         method: 'PATCH',
-        url: `api/bills/${bill.id}`,
-        data: bill
+        url: `api/bills/${payload.bill.id}`,
+        data: payload
     });
 };
 

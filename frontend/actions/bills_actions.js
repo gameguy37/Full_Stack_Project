@@ -27,8 +27,8 @@ export const fetchBill = id => dispatch => {
     return getBill(id).then( bill => dispatch(receiveBill(bill)));
 };
 
-export const newBill = bill => dispatch => {
-    return createBill(bill).then( bill => dispatch(receiveBill(bill)));
+export const newBill = payload => dispatch => {
+    return createBill(payload).then( response => dispatch(receiveBill(response.bill)));
 };
 
 export const editBill = bill => dispatch => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import Checkbox from './checkbox';
+import FriendExpenseCheckbox from './friend_expense_checkbox';
 
-export default class AddExpense extends React.Component {
+export default class FriendAddExpense extends React.Component {
     constructor(props) {
         super(props);
 
@@ -47,26 +47,20 @@ export default class AddExpense extends React.Component {
 
     render() {
 
-        const { acceptedFriendIds } = this.props;
-        const { pendingFriendIds } = this.props;
-        const allFriendIds = acceptedFriendIds.concat(pendingFriendIds);
-
-        const allFriends = Object.values(this.props.users).map( user => {
-            if (allFriendIds.includes(user.id)) {
-                return (
-                    <li key={user.id}>
-                        <label>
-                            <Checkbox name={user.id} checked={this.state.checked} handlechange={this.handleCheckboxChange} />
-                            <span>{user.name}</span>
-                        </label>
-                    </li>
-                );
-            }
-        });
+        const Friend = () => {
+            return (
+                <li key={this.props.friendId}>
+                    <label>
+                        <FriendExpenseCheckbox name={this.props.friendId} checked={this.state.checked} handlechange={this.handleCheckboxChange} />
+                        <span>{Object.values(this.props.users)[this.props.friendId].name}</span>
+                    </label>
+                </li>
+            );
+        }
 
         return (
             <div className='add-expense-box'>
-                <h1>Choose friends with whom to split expense:</h1>
+                <h1>Split expense:</h1>
                 <br/>
                 <br/>
                 <form onSubmit={this.handleSubmit}>
@@ -78,7 +72,7 @@ export default class AddExpense extends React.Component {
                         <input type="checkbox" onChange={this.checkChange1} value={this.state.selfChecked} />
                         Myself</label>
                         <br/>
-                        {allFriends}
+                        {Friend}
                     </ul>
                     <br/>
                     <br/>

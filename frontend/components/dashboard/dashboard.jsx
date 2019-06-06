@@ -58,9 +58,9 @@ class Dashboard extends React.Component {
             let userOwesTotal = 0;
             let userIsOwedTotal = 0;
 
-            if (self.props.currentUser.paymentIds.length === 0) { // if the current user doesn't have any payments due to others
-                self.props.currentUser.paidBillIds.forEach( billId => { // iterate through the current user's paid bill IDs array
-                    Object.values(self.props.payments).forEach( payment => { // iterate through every payment
+            if (self.props.currentUser.paymentIds.length === 0) {
+                self.props.currentUser.paidBillIds.forEach( billId => {
+                    Object.values(self.props.payments).forEach( payment => {
                         if ((payment.user_id === user.id) && (payment.bill_id === billId)) {
                             userIsOwedTotal += payment.initial_amount - payment.paid_amount;
                         }
@@ -93,9 +93,9 @@ class Dashboard extends React.Component {
             let userOwesTotal = 0;
             let userIsOwedTotal = 0;
             
-            if (self.props.currentUser.paidBillIds.length === 0) { // if the current user hasn't paid any bills at all and only owes others
-                Object.values(self.props.payments).forEach ( payment => { // iterate through all payments
-                    Object.values(self.props.bills).forEach( bill => { //iterate through all bills
+            if (self.props.currentUser.paidBillIds.length === 0) {
+                Object.values(self.props.payments).forEach ( payment => {
+                    Object.values(self.props.bills).forEach( bill => {
                         if ((payment.user_id === self.props.currentUser.id) && (bill.biller_id === user.id)) {
                             userOwesTotal += payment.initial_amount - payment.paid_amount;
                         }

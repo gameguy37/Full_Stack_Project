@@ -1,8 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { ProtectedRoute } from '../../util/route_util';
+import { Switch } from 'react-router-dom';
 import LeftSidebar from '../left_sidebar/left_sidebar_container';
 import RightSidebar from '../right_sidebar/right_sidebar';
 import Dashboard from '../dashboard/dashboard';
+import FriendShow from '../friend_show/friend_show';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -23,7 +26,10 @@ class NavBar extends React.Component {
                     <LeftSidebar />
                 </section>
                 <section id="center-box">
-                    <Dashboard />
+                    <Switch>
+                        <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+                        <ProtectedRoute path="/friends/:friendId" component={FriendShow} />
+                    </Switch>
                 </section>
                 <section id="right-sidebar">
                     <RightSidebar />

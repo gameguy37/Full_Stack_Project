@@ -1,0 +1,51 @@
+#friend-show-transactions {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    font-size: 14px;
+    color: #999;
+    font-weight: bold;
+}
+
+.x-owes-you {
+    color: rgb(91, 197, 167);
+}
+
+.you-owe-x {
+    color: rgb(255, 101, 47);
+}
+
+#username-friendship-flex {
+    display: flex;
+    align-items: center;
+}
+
+#username-friendship-flex h1 {
+    margin-left: 4px;
+}
+
+#username-friendship-flex span {
+    vertical-align: center;
+    margin-top: 2px;
+    margin-left: 5px;
+    background-color: #3a87ad;
+    border-radius: 3px;
+    padding: 1px 4px 2px;
+    color: #ffffff;
+    font-size: 10.998px;
+    font-weight: bold;
+    line-height: 14px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+}
+
+#username-friendship-flex span:empty {
+    padding: 0;
+}
+
+#username-friendship-flex img {
+    border: 1px solid #bbb;
+    border-radius: 18px;
+    height: 34px;
+}

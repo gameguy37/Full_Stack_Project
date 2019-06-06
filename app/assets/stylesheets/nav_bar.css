@@ -265,7 +265,8 @@
     font-weight: 700;
 }
 
-.addfriend-box {
+.addfriend-box,
+.add-expense-box {
     background-color: white;
     border: 1px solid #999999;
     border-radius: 10px;
@@ -275,7 +276,8 @@
     align-content: center;
 }
 
-.addfriend-box h1 {
+.addfriend-box h1,
+.add-expense-box h1 {
     text-align: center;
     font-size: 18px;
 }
@@ -288,6 +290,11 @@
 
 .add-friend-btn {
     margin-left: 20px;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+
+.create-bill-btn {
     border-radius: 5px;
     border: 1px solid #999;
 }

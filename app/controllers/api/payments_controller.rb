@@ -10,14 +10,14 @@ class Api::PaymentsController < ApplicationController
     #     render :show
     # end
 
-    def create
-        @payment = Payment.create(payment_params)
-        if @payment.save
-            render :show
-        else
-            render json: ["Unable to create payment"], status: 422
-        end
-    end
+    # def create
+    #     @payment = Payment.create(payment_params)
+    #     if @payment.save
+    #         render :show
+    #     else
+    #         render json: ["Unable to create payment"], status: 422
+    #     end
+    # end
 
     def update
         @payment = current_user.payments.find(params[:id])
