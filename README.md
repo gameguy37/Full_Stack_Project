@@ -4,8 +4,6 @@
 
 goDutch is designed to be a clone of the expense-tracking website Splitwise. goDutch is a free tool for friends and roommates to track bills, IOUs, and other shared expenses so that everyone gets paid back. In addition to tracking specific expenses between a user and individual friends, goDutch is capable of aggregating all that data and providing an overview to let you know whether you are in debt to others or if you have money coming your way!
 
-<img src="app/assets/images/production_screen_shot.png" alt="production-screenshot" width="900"/>
-
 [Take me to goDutch!](https://godutch-app.herokuapp.com)
 
 goDutch was built with the following technologies:
