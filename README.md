@@ -8,14 +8,13 @@ goDutch is designed to be a clone of the expense-tracking website Splitwise. goD
 
 goDutch was built with the following technologies:
 * Ruby on Rails - to create a database, manage relationships between data types, and handle creation/deletion of records and associations (backend)
-  * Ruby v.XX.XX.XX
-  * Rails v.XX.XX.XX
+  * Ruby v.2.5.1p57
+  * Rails v.5.2.3
 * Javascript and React/Redux - to manage user input, send requests to the backend for addition/deletion of database records, and update the page display to reflect those changes (frontend)
   * Node.js v.10.13.0
   * Node Package Manager v.6.4.1
   * React v.16.8.6
   * Redux v.4.0.1
-  * React-Redux v.7.0.3
 
 # Features
 
@@ -40,3 +39,6 @@ goDutch was built with the following technologies:
 * Navigating to the page of one specific friend shows a transaction history of all expenses that include both the user and that friend
 * Items in the transaction history indicate the total original bill amount before splitting as well as the outstanding balance owed to the person that paid the bill
   * This outstanding balance reflects any partial payments that may have been made toward settling up
+
+### Planned Features
+* Users will be able to create/delete comments on expenses
