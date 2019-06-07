@@ -55,19 +55,23 @@ class Api::BillsController < ApplicationController
 
     def destroy
         @bill = Bill.find(params[:id])
+    
         @payments = @bill.payments
-
+        
         @users = []
-
+        
         @payments.each do |payment|
             @users << User.find(payment.user_id)
         end
-      
+        
         @users << User.find(@bill.biller_id)
         
-        @payments.destroy
-        @bill.destroy
+        @payments.each do |payment|
+            payment.destroy
+        end
         
+        @bill.destroy
+
         render :show
     end
 

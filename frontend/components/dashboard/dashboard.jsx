@@ -54,7 +54,10 @@ class Dashboard extends React.Component {
         let totalBalanceUserIsOwed = 0;
         let totalBalanceUserOwes = 0;
 
-        let friendsWhoOwe = Object.values(self.props.users).map( user => {
+        let friendsWhoAreOwed = [];
+        let friendsWhoOwe = [];
+
+        Object.values(self.props.users).map( user => {
             let userOwesTotal = 0;
             let userIsOwedTotal = 0;
 
@@ -66,36 +69,9 @@ class Dashboard extends React.Component {
                         }
                     })
                 })
-            } else {
-                Object.values(self.props.payments).forEach( payment => {
-                        self.props.currentUser.paidBillIds.forEach( billId => {
-                            if ((payment.user_id === user.id) && (payment.bill_id === billId) && (self.props.currentUser.paidBillIds.includes(billId))) {
-                                userIsOwedTotal += payment.initial_amount - payment.paid_amount;
-                            }
-                            if ((payment.user_id === self.props.currentUser.id) && (payment.bill_id === billId)) {
-                                userOwesTotal += payment.initial_amount - payment.paid_amount;
-                            }
-                        })
-                })
-            }
-            
-            if ((userIsOwedTotal - userOwesTotal) > 0) {
-                totalBalanceUserIsOwed += userIsOwedTotal;
-                totalBalanceUserOwes += userOwesTotal;
-                return (
-                    <DashboardItem key={user.id} friendId={user.id} amount={userIsOwedTotal.toFixed(2)} className="right-side" />
-                );
-            }
-
-        })
-
-        let friendsWhoAreOwed = Object.values(self.props.users).map( user => {
-            let userOwesTotal = 0;
-            let userIsOwedTotal = 0;
-            
-            if (self.props.currentUser.paidBillIds.length === 0) {
-                Object.values(self.props.payments).forEach ( payment => {
-                    Object.values(self.props.bills).forEach( bill => {
+            } else if (self.props.currentUser.paidBillIds.length === 0) {
+                Object.values(self.props.payments).forEach(payment => {
+                    Object.values(self.props.bills).forEach(bill => {
                         if ((payment.user_id === self.props.currentUser.id) && (bill.biller_id === user.id)) {
                             userOwesTotal += payment.initial_amount - payment.paid_amount;
                         }
@@ -103,26 +79,31 @@ class Dashboard extends React.Component {
                 })
             } else {
                 Object.values(self.props.payments).forEach( payment => {
-                    user.paidBillIds.forEach( billId => {
-                        if ((payment.user_id === user.id) && (payment.bill_id === billId) && (user.paidBillIds.includes(billId)) ) {
+                    self.props.currentUser.paidBillIds.forEach( billId => {
+                        if ((payment.user_id === user.id) && (payment.bill_id === billId) && (self.props.currentUser.paidBillIds.includes(billId))) {
                             userIsOwedTotal += payment.initial_amount - payment.paid_amount;
                         }
-                        if ((payment.user_id === self.props.currentUser.id) && (payment.bill_id === billId) && (user.paidBillIds.includes(billId)) ) {
+                    })
+                    user.paidBillIds.forEach( billId => {
+                        if ((payment.user_id === self.props.currentUser.id) && (payment.bill_id === billId) && (user.paidBillIds.includes(billId))) {
                             userOwesTotal += payment.initial_amount - payment.paid_amount;
                         }
                     })
                 })
             }
+           
+            totalBalanceUserIsOwed += userIsOwedTotal;
+            totalBalanceUserOwes += userOwesTotal;
 
             if ((userIsOwedTotal - userOwesTotal) < 0) {
-                totalBalanceUserIsOwed += userIsOwedTotal;
-                totalBalanceUserOwes += userOwesTotal;
-                return (
-                    <DashboardItem key={user.id} friendId={user.id} amount={userOwesTotal.toFixed(2)} className="left-side"/>
-                );
+                friendsWhoAreOwed = friendsWhoAreOwed.concat(<DashboardItem key={user.id} friendId={user.id} amount={Math.abs(userIsOwedTotal - userOwesTotal).toFixed(2)} className="left-side" />);
             }
-        })
 
+            if ((userIsOwedTotal - userOwesTotal) > 0) {
+                friendsWhoOwe = friendsWhoOwe.concat(<DashboardItem key={user.id} friendId={user.id} amount={Math.abs(userIsOwedTotal - userOwesTotal).toFixed(2)} className="right-side" />);
+            }
+
+        })
         let totalBalance;
         let negativeBalance;
 
