@@ -100,7 +100,6 @@
 #fsl-date-num {
     color: #999 !important;
     font-size: 20px;
-    
 }
 
 #friend-show-left img {
@@ -114,10 +113,31 @@
     color: rgb(51, 51, 51);
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 
 }
 
-#friend-show-right {
+#friend-show-right0 {
+    display: flex;
+    justify-content: center;
+    margin-right: 72px;
+}
+
+#friend-show-right1 {
+    font-weight: normal;
+    padding: 11px 0 12px 5px;
+    font-size: 12px;
+    line-height: 15px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-end;
+    vertical-align: top;
+    color: #aaa;
+    cursor: pointer;
+    width: 100px;
+}
+
+#friend-show-right2 {
     font-weight: normal;
     padding: 11px 15px 12px 5px;
     font-size: 12px;
@@ -128,7 +148,7 @@
     vertical-align: top;
     color: #aaa;
     cursor: pointer;
-    width: 175px;
+    width: 100px;
 }
 
 #this-person-paid {

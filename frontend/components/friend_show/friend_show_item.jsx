@@ -68,14 +68,18 @@ const FriendShowItem = (props) => {
                     <img src={window.uncategorized} />
                     <span id="description">{description}</span>
                 </div>
-                <div id="friend-show-right">
-                    <div id="this-person-paid">
-                        <span>{friendName} paid</span>
-                        <span id="tpp-amt">${billAmount}</span>
+                <div id="friend-show-right0">
+                    <div id="friend-show-right1">
+                        <div id="this-person-paid">
+                            <span>{friendName} paid</span>
+                            <span id="tpp-amt">${billAmount}</span>
+                        </div>
                     </div>
-                    <div id="amount-owed">
-                        <span>{whoLentWho}</span>
-                        <span id={reactiveId}>{owedAmount}</span>
+                    <div id="friend-show-right2">
+                        <div id="amount-owed">
+                            <span>{whoLentWho}</span>
+                            <span id={reactiveId}>{owedAmount}</span>
+                        </div>
                     </div>
                 </div>
                 <div id="friend-show-delete">
