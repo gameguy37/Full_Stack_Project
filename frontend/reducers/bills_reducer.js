@@ -15,10 +15,9 @@ export default (state = {}, action) => {
             let newState = merge({}, state, { [action.bill.id]: action.bill });
             return newState;
         case REMOVE_BILL:
-            debugger
             let newBillsState = merge({}, state);
             delete newBillsState[action.bill.id];
-            return newBillsState
+            return newBillsState;
         default:
             return state;
     }

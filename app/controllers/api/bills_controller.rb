@@ -54,7 +54,7 @@ class Api::BillsController < ApplicationController
     end
 
     def destroy
-        @bill = current_user.bills.find(params[:id])
+        @bill = Bill.find(params[:id])
         @payments = @bill.payments
 
         @users = []
@@ -65,6 +65,7 @@ class Api::BillsController < ApplicationController
       
         @users << User.find(@bill.biller_id)
         
+        @payments.destroy
         @bill.destroy
         
         render :show
