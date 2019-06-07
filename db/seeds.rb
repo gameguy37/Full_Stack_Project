@@ -23,6 +23,10 @@ u7 = User.create(name: 'Rutherford the Brave', email: 'head-knight@gamehendge.co
 u8 = User.create(name: 'Mr. Palmer', email: 'accountant@gamehendge.com', password: 'password123')
 u9 = User.create(name: 'Wilson', email: 'king_of_prussia@gamehendge.com', password: 'password123')
 u10 = User.create(name: 'The Sloth', email: 'hitman@gamehendge.com', password: 'password123')
+u11 = User.create(name: 'Trey', email: 'trey@jemprecords.com', password: 'password123')
+u12 = User.create(name: 'Page', email: 'page@jemprecords.com', password: 'password123')
+u13 = User.create(name: 'Mike', email: 'mike@jemprecords.com', password: 'password123')
+u14 = User.create(name: 'Fishman', email: 'fishman@jemprecords.com', password: 'password123')
 
 f1 = Friendship.create(user_id: u1.id, friend_id: u2.id, accepted: false)
 f2 = Friendship.create(user_id: u1.id, friend_id: u3.id, accepted: true)
@@ -40,6 +44,10 @@ f13 = Friendship.create(user_id: u0.id, friend_id: u7.id, accepted: false)
 f14 = Friendship.create(user_id: u0.id, friend_id: u8.id, accepted: true)
 f15 = Friendship.create(user_id: u0.id, friend_id: u9.id, accepted: false)
 f16 = Friendship.create(user_id: u0.id, friend_id: u10.id, accepted: true)
+f17 = Friendship.create(user_id: u0.id, friend_id: u11.id, accepted: true)
+f18 = Friendship.create(user_id: u0.id, friend_id: u12.id, accepted: false)
+f19 = Friendship.create(user_id: u0.id, friend_id: u13.id, accepted: false)
+f20 = Friendship.create(user_id: u0.id, friend_id: u14.id, accepted: true)
 
 b1 = Bill.create(biller_id: u0.id, category: 'Entertainment: Music', description: 'Tickets to the concert', total_amount: 35.50)
 b2 = Bill.create(biller_id: u0.id, category: 'Uncategorized: General', description: 'Candles', total_amount: 519.99)
@@ -51,6 +59,10 @@ b7 = Bill.create(biller_id: u10.id, category: 'Uncategorized: General', descript
 b8 = Bill.create(biller_id: u8.id, category: 'Uncategorized: General', description: 'Test expense', total_amount: 10000.00)
 b9 = Bill.create(biller_id: u0.id, category: 'Uncategorized: General', description: 'More testing', total_amount: 100.00)
 b10 = Bill.create(biller_id: u1.id, category: 'Uncategorized: General', description: 'Further testing', total_amount: 100.00)
+b11 = Bill.create(biller_id: u11.id, category: 'Entertainment: Music', description: '7/27/14 MPP Set 2', total_amount: 45.00)
+b12 = Bill.create(biller_id: u12.id, category: 'Entertainment: Music', description: '12/31/13 MSG Set 2', total_amount: 85.00)
+b13 = Bill.create(biller_id: u13.id, category: 'Entertainment: Music', description: '7/10/99 CDT', total_amount: 45.00)
+b14 = Bill.create(biller_id: u14.id, category: 'Entertainment: Music', description: '7/31/13 Tahoe Tweezer', total_amount: 55.00)
 
 
 p1 = Payment.create(user_id: u1.id, bill_id: b1.id, initial_amount: 35.50, paid_amount: 10.00)
@@ -70,6 +82,11 @@ p14 = Payment.create(user_id: u5.id, bill_id: b9.id, initial_amount: 25.00, paid
 p15 = Payment.create(user_id: u6.id, bill_id: b9.id, initial_amount: 25.00, paid_amount: 13.00)
 p16 = Payment.create(user_id: u7.id, bill_id: b9.id, initial_amount: 25.00, paid_amount: 9.00)
 p17 = Payment.create(user_id: u0.id, bill_id: b10.id, initial_amount: 100.00, paid_amount: 30.00)
+p18 = Payment.create(user_id: u0.id, bill_id: b11.id, initial_amount: 45.00, paid_amount: 0.00)
+p19 = Payment.create(user_id: u0.id, bill_id: b12.id, initial_amount: 85.00, paid_amount: 0.00)
+p20 = Payment.create(user_id: u0.id, bill_id: b13.id, initial_amount: 45.00, paid_amount: 0.00)
+p21 = Payment.create(user_id: u0.id, bill_id: b14.id, initial_amount: 55.00, paid_amount: 0.00)
+
 
 c1 = Comment.create(author_id: u1.id, bill_id: b1.id, body: "Thanks for the tickets, buddy!")
 c2 = Comment.create(author_id: u0.id, bill_id: b2.id, body: "That is a $200 plasma TV you just killed!!! Good luck paying me back on your zero dollars a year salary plus benefits, babe!")
