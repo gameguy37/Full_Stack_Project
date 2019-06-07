@@ -62,7 +62,6 @@ class FriendShow extends React.Component {
                     if ((payment.user_id === self.props.friendId) && (bill.biller_id === self.props.currentUser.id) && (payment.bill_id === billId) && (bill.id === billId)) {
                         friendOwesYou = friendOwesYou.concat(<FriendShowItem key={bill.id} friendId={self.props.friendId} amount={payment.initial_amount} bill={bill} payment={payment} className="x-owes-you" />)
                         runningBalance += (payment.initial_amount - payment.paid_amount);
-                        console.log(runningBalance);
                     }
                 })
             })

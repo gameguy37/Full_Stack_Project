@@ -1,7 +1,3 @@
-# json.partial! 'api/bills/bill', bill: @bill
-# json.partial! 'api/payments/payment', payment: @payment
-# json.payments @payments
-
 json.bill do
     json.partial! 'api/bills/bill', bill: @bill
 end

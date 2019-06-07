@@ -22,10 +22,12 @@ const receiveBillPayload = payload => ({
     users: payload.users
 });
 
-const removeBill = bill => ({
+const removeBill = payload => ({
     type: REMOVE_BILL,
-    bill
-});
+    bill: payload.bill,
+    payments: payload.payments,
+    users: payload.users
+})
 
 export const fetchBills = () => dispatch => {
     return getBills().then( bills => dispatch(receiveBills(bills)));
@@ -44,5 +46,5 @@ export const editBill = bill => dispatch => {
 };
 
 export const deleteBill = id => dispatch => {
-    return destroyBill(id).then( bill => dispatch(removeBill(bill)));
+    return destroyBill(id).then( payload => dispatch(removeBill(payload)));
 };

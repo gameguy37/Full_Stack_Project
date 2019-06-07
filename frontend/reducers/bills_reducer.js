@@ -13,7 +13,12 @@ export default (state = {}, action) => {
         case RECEIVE_BILL:
         case RECEIVE_BILL_PAYLOAD:
             let newState = merge({}, state, { [action.bill.id]: action.bill });
-            return newState
+            return newState;
+        case REMOVE_BILL:
+            debugger
+            let newBillsState = merge({}, state);
+            delete newBillsState[action.bill.id];
+            return newBillsState
         default:
             return state;
     }

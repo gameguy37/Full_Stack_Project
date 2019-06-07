@@ -25,10 +25,6 @@ class RightSidebarFriend extends React.Component {
     }
 
     render() {
-
-        debugger
-
-
         return (
             <>
                 <a href="#" id="rs-friend-balances-btn"><i className="icon-align-justify"></i></a>

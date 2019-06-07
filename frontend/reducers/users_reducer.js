@@ -10,6 +10,8 @@ export default (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_USERS:
         case RECEIVE_BILL_PAYLOAD:
+        case REMOVE_BILL:
+            debugger
             return merge({}, state, action.users);
         case RECEIVE_USER:
         case RECEIVE_CURRENT_USER:
