@@ -140,7 +140,7 @@ class Dashboard extends React.Component {
                     <div id="dashboard-topbar">
                         <h1>Dashboard</h1>
                         <div id="dashboard-topbar-btns">
-                            <a id="add-expense-btn" onClick={() => this.props.openModal('addExpense')} href="#">Add an expense</a>
+                            <span id="add-expense-btn" onClick={() => this.props.openModal('addExpense')} >Add an expense</span>
                         </div>
                     </div>
                     <div id="dashboard-balances-bar">

@@ -5,7 +5,11 @@ import { deleteFriend } from '../../actions/friendship_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        friendId: ownProps.match.params.friendId
+        friendId: ownProps.match.params.friendId,
+        users: state.entities.users,
+        payments: state.entities.payments,
+        bills: state.entities.bills,
+        currentUser: state.entities.users[state.session.id],
     }
 }
 
@@ -21,15 +25,15 @@ class RightSidebarFriend extends React.Component {
     }
 
     render() {
+
+        debugger
+
+
         return (
             <>
                 <a href="#" id="rs-friend-balances-btn"><i className="icon-align-justify"></i></a>
                 <a href="#" onClick={() => this.props.deleteFriend(this.props.friendId)} id="rs-friend-settings-btn"><i className="icon-cog icon-large"></i></a>
                 <h3 id="rs-friend-text">YOUR BALANCE</h3>
-                <div id="rs-balance-flex">
-                    <div id="owe">you owe</div>
-                    <div id="balance">$999.99</div>
-                </div>
             </>
         );
 

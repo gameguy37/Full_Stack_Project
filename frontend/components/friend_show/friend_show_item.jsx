@@ -49,7 +49,7 @@ const FriendShowItem = (props) => {
     }
     
     if (props.bill && props.payment && props.friend && (props.payment.bill_id === props.bill.id ) && (props.bill.biller_id === props.friendId) && (props.payment.user_id === props.currentUser.id)) {
-        owedAmount = (parseFloat(props.payment.initial_amount)).toFixed(2);
+        owedAmount = (parseFloat(props.payment.initial_amount - props.payment.paid_amount)).toFixed(2);
         reactiveId = "orange";
         description = props.bill.description;
         friendName = props.friend.name;
@@ -78,7 +78,7 @@ const FriendShowItem = (props) => {
                     <div id="friend-show-right2">
                         <div id="amount-owed">
                             <span>{whoLentWho}</span>
-                            <span id={reactiveId}>{owedAmount}</span>
+                            <span id={reactiveId}>${owedAmount}</span>
                         </div>
                     </div>
                 </div>

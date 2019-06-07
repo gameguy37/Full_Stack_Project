@@ -1,7 +1,3 @@
-#dashboard-box {
-
-}
-
 #dashboard-topbar {
     width: 538px;
     border-bottom: 1px solid #ddd;
@@ -179,7 +175,8 @@ a.right-side {
     margin-left: 0px;
 }
 
-a.right-side:hover {
+a.right-side:hover,
+a.left-side:hover {
     background-color: #f8f8f8;
 }
 

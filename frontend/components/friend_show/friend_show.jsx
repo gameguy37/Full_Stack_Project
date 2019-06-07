@@ -52,6 +52,7 @@ class FriendShow extends React.Component {
 
     render() {
 
+        let runningBalance = 0;
         let friendOwesYou = []
         let youOweFriend = []
 
@@ -60,16 +61,19 @@ class FriendShow extends React.Component {
                 Object.values(self.props.payments).forEach(payment => {
                     if ((payment.user_id === self.props.friendId) && (bill.biller_id === self.props.currentUser.id) && (payment.bill_id === billId) && (bill.id === billId)) {
                         friendOwesYou = friendOwesYou.concat(<FriendShowItem key={bill.id} friendId={self.props.friendId} amount={payment.initial_amount} bill={bill} payment={payment} className="x-owes-you" />)
+                        runningBalance += (payment.initial_amount - payment.paid_amount);
+                        console.log(runningBalance);
                     }
                 })
             })
         })
-
+        
         self.props.currentUser.paymentIds.forEach(paymentId => {
             Object.values(self.props.payments).forEach(payment => {
                 Object.values(self.props.bills).forEach(bill => {
                     if ((bill.biller_id === self.props.friendId) && (payment.user_id === self.props.currentUser.id) && (payment.bill_id === bill.id) && (payment.id === paymentId)) {
                         youOweFriend = youOweFriend.concat(<FriendShowItem key={paymentId} friendId={self.props.friendId} amount={payment.initial_amount} bill={bill} payment={payment} className="you-owe-x" />)
+                        runningBalance -= (payment.initial_amount - payment.paid_amount);
                     }
                 })
             })
@@ -87,6 +91,21 @@ class FriendShow extends React.Component {
             pending = "invite pending";
         } else {
             pending = null;
+        }
+
+        let runningBalanceClassName;
+        let runningBalanceText = `$${Math.abs(runningBalance).toFixed(2)}`;
+        let runningBalanceOweText;
+        if (runningBalance > 0) {
+            runningBalanceClassName = "pos-running-balance"
+            runningBalanceOweText = `${friendName} owes you`
+        } else if (runningBalance < 0) {
+            runningBalanceClassName = "neg-running-balance"
+            runningBalanceOweText = `you owe ${friendName}`
+        } else {
+            runningBalanceClassName = "no-balance";
+            runningBalanceText = "You are all settled up";
+            runningBalance = null;
         }
 
         return (
@@ -111,6 +130,11 @@ class FriendShow extends React.Component {
                         {youOweFriend}
                     </div>
                 </div>
+                <div className={runningBalanceClassName}>
+                    <span id="rb-text">{runningBalanceOweText}</span>
+                    <span id="rb-balance">{runningBalanceText}</span>
+                </div>
+
             </>
         );
 

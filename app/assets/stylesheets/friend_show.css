@@ -133,7 +133,6 @@
     justify-content: flex-end;
     vertical-align: top;
     color: #aaa;
-    cursor: pointer;
     width: 100px;
 }
 
@@ -147,7 +146,6 @@
     justify-content: flex-start;
     vertical-align: top;
     color: #aaa;
-    cursor: pointer;
     width: 100px;
 }
 
@@ -194,3 +192,45 @@
 #friend-show-delete button {
     margin-top: 15px;
 }
+
+.pos-running-balance,
+.neg-running-balance,
+.no-balance {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 583px;
+    top: 76px;
+    width: 250px;
+}
+
+.pos-running-balance {
+    color: #5bc5a7;
+}
+
+.neg-running-balance {
+    color: #ff652f;
+}
+
+.no-balance #rb-text,
+.no-balance #rb-balance {
+    color: #999;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: -2.5px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+#rb-text {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 5px;
+}
+
+#rb-balance {
+    font-size: 28px;
+    line-height: 22px;
+    font-weight: bold;
+}
+
