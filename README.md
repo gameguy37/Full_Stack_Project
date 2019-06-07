@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Welcome to goDutch
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+goDutch is designed to be a clone of the expense-tracking website Splitwise. goDutch is a free tool for friends and roommates to track bills, IOUs, and other shared expenses so that everyone gets paid back.
