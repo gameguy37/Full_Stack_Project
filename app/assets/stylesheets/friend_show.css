@@ -234,3 +234,90 @@
     font-weight: bold;
 }
 
+#friend-show-bill {
+    background: #f8f8f8;
+    padding: 15px;
+    box-shadow: inset 0 5px 7px -5px rgba(0,0,0,0.25), inset 0 -3px 7px -5px rgba(0,0,0,0.25);
+    font-size: 13px;
+    line-height: 18px;
+    color: #333333;
+    height: 356px;
+}
+
+.hide-bill {
+    display: none;
+}
+
+.show-bill {
+    display: flex;
+}
+
+#friend-show-bill-topbar {
+    display: flex;
+    justify-content: flex-start;
+    height: 115px;
+    padding-bottom: 10px;
+}
+
+#topbar-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 86px;
+}
+
+#topbar-image {
+    border: 1px solid #ddd;
+    width: 50px;
+    height: 84px;
+    margin-top: 1px;
+    margin-left: 1px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#topbar-span1 {
+    font-size: 16px;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 27px;
+    margin-bottom: -1px;
+
+}
+
+#topbar-span2 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+#topbar-span3 {
+    margin-top: 3px;
+    font-size: 12px;
+    color: #999999;
+    line-height: 18px;
+    font-weight: normal;
+
+
+}
+
+#edit-expense-btn {
+    background: #ff652f;
+    color: #fff;
+    text-shadow: 0 -1px 0 #c83400;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    padding: 2px 5px;
+    font-size: 11px;
+    line-height: 14px;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
+    text-decoration: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: inline-block;
+    width: 75px;
+    vertical-align: middle;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    text-rendering: optimizeLegibility;
+}

@@ -1,9 +1,11 @@
 images to one color
 type=text vs type=email not accepting styling
-currently im showing friendships in state and shouldn't be, they arent needed
 continue error handling
-add friend button
-delete friends
+delete friends / edit friends gear button
 edit friend info
 autofocus fields
 splash page words collapse
+Logout user dropdown
+clicking a bill should show the bill, provide option to edit, and option to add/delete comments
+
+

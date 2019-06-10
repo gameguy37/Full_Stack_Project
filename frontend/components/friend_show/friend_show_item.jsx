@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
         className: ownProps.className,
         bill: ownProps.bill,
         payment: ownProps.payment,
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+        users: state.entities.users,
     }
 }
 
@@ -84,6 +85,26 @@ const FriendShowItem = (props) => {
                 </div>
                 <div id="friend-show-delete">
                     <button onClick={() => props.deleteBill(props.bill.id)}>Delete</button>
+                </div>
+            </div>
+            <div id="friend-show-bill" className="show-bill">
+                <div id="friend-show-bill-topbar">
+                    <img id="topbar-image" src={window.uncategorized} />
+                    <div id="topbar-info">
+                        <span id="topbar-span1">
+                            {props.bill.description}
+                        </span>
+                        <span id="topbar-span2">
+                            ${parseFloat(props.bill.total_amount).toFixed(2)}
+                        </span>
+                        <span id="topbar-span3">
+                            Added by {props.users[props.bill.biller_id].name} on {(props.bill.created_at).split('T')[0]}
+                        </span>
+                        <button id="edit-expense-btn">Edit expense</button>
+                    </div>
+                </div>
+                <div id="friend-show-bill-main">
+
                 </div>
             </div>
         </li>
