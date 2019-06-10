@@ -43,5 +43,6 @@ goDutch was built with the following technologies:
   * This outstanding balance reflects any partial payments that may have been made toward settling up
 
 ### Planned Features
+* Users will be able to edit information of their friends and edit existing expenses
 * Users will be able to create/delete comments on expenses
 
