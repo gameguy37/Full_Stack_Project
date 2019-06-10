@@ -19,7 +19,10 @@ export default class AddExpense extends React.Component {
 
     change(field) {
         return e => {
-            this.setState({ [field]: e.target.value });
+            debugger
+            if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."].includes(e.nativeEvent.data)) {
+                this.setState({ [field]: e.target.value });
+            }
         };
     }
 
@@ -43,8 +46,10 @@ export default class AddExpense extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.newBill({ bill: { total_amount: this.state.amount, description: "default", category: "default" }, payment: { payer_ids: this.state.payerIds, self_checked: this.state.selfChecked } });
-        this.props.closeModal();
+        if (this.state.amount.split('.').length <= 2) {
+            this.props.newBill({ bill: { total_amount: this.state.amount, description: "default", category: "default" }, payment: { payer_ids: this.state.payerIds, self_checked: this.state.selfChecked } });
+            this.props.closeModal();
+        }
     }
 
     render() {
