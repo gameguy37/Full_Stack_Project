@@ -103,8 +103,14 @@ const FriendShowItem = (props) => {
                         <button id="edit-expense-btn">Edit expense</button>
                     </div>
                 </div>
+                <hr></hr>
                 <div id="friend-show-bill-main">
-
+                    <div id="bill-participants">
+                        <span id="bill-payer">
+                            <img src={window.profilePic} />
+                            {props.users[props.bill.biller_id].name} paid ${parseFloat(props.bill.total_amount).toFixed(2)}
+                        </span>
+                    </div>
                 </div>
             </div>
         </li>
