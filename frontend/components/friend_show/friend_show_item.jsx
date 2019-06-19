@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { fetchUsers } from '../../actions/users_actions';
 import { deleteBill } from '../../actions/bills_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -17,12 +18,14 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        deleteBill: bill => dispatch(deleteBill(bill))
+        deleteBill: bill => dispatch(deleteBill(bill)),
+        fetchUsers: () => dispatch(fetchUsers()),
     }
 }
 
 const FriendShowItem = (props) => {
-    if (!props.bill) {
+
+    if (Object.values(props.users).length < 2) {
         return null;
     }
 
@@ -56,7 +59,6 @@ const FriendShowItem = (props) => {
         friendName = props.friend.name;
         billAmount = (parseFloat(props.bill.total_amount)).toFixed(2);
     }
-
     return (
         
         <li className={props.className}>
@@ -103,7 +105,6 @@ const FriendShowItem = (props) => {
                         <button id="edit-expense-btn">Edit expense</button>
                     </div>
                 </div>
-                <hr></hr>
                 <div id="friend-show-bill-main">
                     <div id="bill-participants">
                         <span id="bill-payer">

@@ -114,7 +114,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-
 }
 
 #friend-show-right0 {
@@ -325,5 +324,22 @@
 }
 
 #friend-show-bill-main {
-    padding: 0 15px 15px 15px;
+    padding-top: 15px;
+}
+
+#bill-participants {
+    vertical-align: center;
+    width: 264;
+}
+
+#friend-show-bill-main img {
+    border-radius: 21px;
+    height: 38px;
+    border: 1px solid #bbb;
+    margin-left: 1px;
+    margin-top: -2px;
+}
+
+#friend-show-bill-main span {
+    
 }

@@ -12,7 +12,7 @@ export default (state = {}, action) => {
         case RECEIVE_BILL_PAYLOAD:
         case REMOVE_BILL:
             return merge({}, state, action.users);
-        case RECEIVE_USER:
+        case RECEIVE_USER: 
         case RECEIVE_CURRENT_USER:
             return merge({}, state, {[action.user.id]: action.user});
         case RECEIVE_FRIENDSHIP:

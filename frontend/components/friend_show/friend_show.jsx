@@ -56,27 +56,23 @@ class FriendShow extends React.Component {
         let friendOwesYou = [];
         let youOweFriend = [];
 
-        // self.props.currentUser.paidBillIds.forEach(billId => {
-            Object.values(self.props.bills).forEach(bill => {
-                Object.values(self.props.payments).forEach(payment => {
-                    if ((payment.user_id === self.props.friendId) && (bill.biller_id === self.props.currentUser.id) && (payment.bill_id === bill.id) && (self.props.currentUser.paidBillIds.includes(bill.id))) {
-                        friendOwesYou = friendOwesYou.concat(<FriendShowItem key={bill.id} friendId={self.props.friendId} amount={payment.initial_amount} bill={bill} payment={payment} className="x-owes-you" />)
-                        runningBalance += (payment.initial_amount - payment.paid_amount);
-                    }
-                })
-            })
-        // })
-        
-        // self.props.currentUser.paymentIds.forEach(paymentId => {
+        Object.values(self.props.bills).forEach(bill => {
             Object.values(self.props.payments).forEach(payment => {
-                Object.values(self.props.bills).forEach(bill => {
-                    if ((bill.biller_id === self.props.friendId) && (payment.user_id === self.props.currentUser.id) && (payment.bill_id === bill.id) && (self.props.currentUser.paymentIds.includes(payment.id))) {
-                        youOweFriend = youOweFriend.concat(<FriendShowItem key={payment.id} friendId={self.props.friendId} amount={payment.initial_amount} bill={bill} payment={payment} className="you-owe-x" />)
-                        runningBalance -= (payment.initial_amount - payment.paid_amount);
-                    }
-                })
+                if ((payment.user_id === self.props.friendId) && (bill.biller_id === self.props.currentUser.id) && (payment.bill_id === bill.id) && (self.props.currentUser.paidBillIds.includes(bill.id))) {
+                    friendOwesYou = friendOwesYou.concat(<FriendShowItem key={bill.id} friendId={self.props.friendId} amount={payment.initial_amount} bill={bill} payment={payment} className="x-owes-you" />)
+                    runningBalance += (payment.initial_amount - payment.paid_amount);
+                }
             })
-        // })
+        })
+        
+        Object.values(self.props.payments).forEach(payment => {
+            Object.values(self.props.bills).forEach(bill => {
+                if ((bill.biller_id === self.props.friendId) && (payment.user_id === self.props.currentUser.id) && (payment.bill_id === bill.id) && (self.props.currentUser.paymentIds.includes(payment.id))) {
+                    youOweFriend = youOweFriend.concat(<FriendShowItem key={payment.id} friendId={self.props.friendId} amount={payment.initial_amount} bill={bill} payment={payment} className="you-owe-x" />)
+                    runningBalance -= (payment.initial_amount - payment.paid_amount);
+                }
+            })
+        })
 
         let friendName;
         let pending;
