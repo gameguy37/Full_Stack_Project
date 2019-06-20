@@ -109,7 +109,7 @@ const FriendShowItem = (props) => {
                     <div id="bill-participants">
                         <span id="bill-payer">
                             <img src={window.profilePic} />
-                            {props.users[props.bill.biller_id].name} paid ${parseFloat(props.bill.total_amount).toFixed(2)}
+                            <strong>{props.users[props.bill.biller_id].name}</strong> paid <strong>${parseFloat(props.bill.total_amount).toFixed(2)}</strong>
                         </span>
                     </div>
                 </div>

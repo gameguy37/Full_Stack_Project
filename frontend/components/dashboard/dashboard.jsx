@@ -129,11 +129,11 @@ class Dashboard extends React.Component {
                             total balance
                             <span id={totalBalance}>{negativeBalance}${Math.abs((totalBalanceUserIsOwed - totalBalanceUserOwes)).toFixed(2)}</span>
                         </div>
-                        <div className="reactive-balances">
+                        <div className="reactive-balances-with-border">
                             you owe
                             <span id="total-you-owe">${totalBalanceUserOwes.toFixed(2)}</span>
                         </div>
-                        <div className="reactive-balances">
+                        <div className="reactive-balances-with-border">
                             you are owed
                             <span id="total-owed">${totalBalanceUserIsOwed.toFixed(2)}</span>
                         </div>

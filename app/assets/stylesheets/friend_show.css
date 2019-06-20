@@ -328,8 +328,10 @@
 }
 
 #bill-participants {
-    vertical-align: center;
-    width: 264;
+    display: flex;
+    align-items: center;
+    width: 264px;
+    margin-top: 5px;
 }
 
 #friend-show-bill-main img {
@@ -337,9 +339,15 @@
     height: 38px;
     border: 1px solid #bbb;
     margin-left: 1px;
-    margin-top: -2px;
+    margin-right: 8px;
 }
 
-#friend-show-bill-main span {
-    
+#bill-payer {
+    font-weight: normal;
+    line-height: 30px;
+}
+
+#bill-payer img {
+    margin-top: -5px;
+    vertical-align: middle;
 }
