@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => {
         className: ownProps.className,
         bill: ownProps.bill,
         payment: ownProps.payment,
+        payments: state.entities.payments,
         currentUser: state.entities.users[state.session.id],
         users: state.entities.users,
     }
@@ -29,6 +30,17 @@ const FriendShowItem = (props) => {
         return null;
     }
 
+    const showBill = () => {
+        const billItem = document.getElementById(`${props.bill.id}`);
+        if (billItem.classList.contains('hide-bill')) {
+            billItem.classList.remove('hide-bill');
+            billItem.classList.add('show-bill');
+        } else {
+            billItem.classList.remove('show-bill');
+            billItem.classList.add('hide-bill');
+        }
+    }
+
     let whoLentWho;
     if (props.friend && props.className === "x-owes-you") {
         whoLentWho = props.friend.name + " owes you"
@@ -37,6 +49,17 @@ const FriendShowItem = (props) => {
     } else {
         whoLentWho = null;
     }
+
+    const billParticipants = Object.values(props.payments).map( payment => {
+        if (payment.bill_id === props.bill.id && payment.user_id !== props.currentUser.id) {
+            return (
+                <span id="bill-participant" key={payment.user_id}>
+                    <img src={window.profilePic} />
+                    <strong>{props.users[payment.user_id].name}</strong> owes <strong>${parseFloat(payment.initial_amount - payment.paid_amount).toFixed(2)}</strong>
+                </span>
+            );
+        }
+    });
 
     let owedAmount;
     let reactiveId;
@@ -59,10 +82,11 @@ const FriendShowItem = (props) => {
         friendName = props.friend.name;
         billAmount = (parseFloat(props.bill.total_amount)).toFixed(2);
     }
+
     return (
         
         <li className={props.className}>
-            <div id="friend-show-item">
+            <div id="friend-show-item" onClick={showBill}>
                 <div id="friend-show-left">
                     <div id="fsl-date">
                         <span id="fsl-date-month">JUN</span>
@@ -89,7 +113,7 @@ const FriendShowItem = (props) => {
                     <button onClick={() => props.deleteBill(props.bill.id)}>Delete</button>
                 </div>
             </div>
-            <div id="friend-show-bill" className="show-bill">
+            <div id={props.bill.id} className="hide-bill friend-show-bill">
                 <div id="friend-show-bill-topbar">
                     <img id="topbar-image" src={window.uncategorized} />
                     <div id="topbar-info">
@@ -111,6 +135,7 @@ const FriendShowItem = (props) => {
                             <img src={window.profilePic} />
                             <strong>{props.users[props.bill.biller_id].name}</strong> paid <strong>${parseFloat(props.bill.total_amount).toFixed(2)}</strong>
                         </span>
+                        {billParticipants}
                     </div>
                 </div>
             </div>
