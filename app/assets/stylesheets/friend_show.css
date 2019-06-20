@@ -74,6 +74,10 @@
     padding-bottom: 1px;
 }
 
+#friend-show-item:hover {
+    cursor: pointer;
+}
+
 #friend-show-left {
     display: flex;
     align-items: center;

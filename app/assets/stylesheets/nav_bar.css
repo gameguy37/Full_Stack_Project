@@ -63,10 +63,11 @@
 #center-box {
     display: block;
     width: 558px;
-    height: 95%;
+    /* height: 100%; */
     position: absolute;
     z-index: 9;
     top: 33px;
+    bottom: 0px;
     left: 50%;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
