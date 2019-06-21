@@ -8,6 +8,8 @@ export default (state = {}, action) => {
             return merge({}, state, action.bills);
         case RECEIVE_BILL:
         case RECEIVE_BILL_PAYLOAD:
+        case RECEIVE_COMMENT_PAYLOAD:
+            debugger
             let newState = merge({}, state, { [action.bill.id]: action.bill });
             return newState;
         case REMOVE_BILL:

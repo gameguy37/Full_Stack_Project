@@ -30,6 +30,8 @@ class Api::BillsController < ApplicationController
 
             @payments = Payment.all.where(bill_id: @bill.id)
 
+            @comments = Comment.all.where(bill_id: @bill.id)
+
             @users = []
 
             @payments.each do |payment|
@@ -57,6 +59,8 @@ class Api::BillsController < ApplicationController
         @bill = Bill.find(params[:id])
     
         @payments = @bill.payments
+
+        @comments = @bill.comments
         
         @users = []
         
@@ -68,6 +72,10 @@ class Api::BillsController < ApplicationController
         
         @payments.each do |payment|
             payment.destroy
+        end
+
+        @comments.each do |comment|
+            comment.destroy
         end
         
         @bill.destroy

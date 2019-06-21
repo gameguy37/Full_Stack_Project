@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchUsers } from '../../actions/users_actions';
 import { deleteBill } from '../../actions/bills_actions';
 import { fetchComments, newComment } from '../../actions/comments_actions';
+import { fetchBill } from '../../actions/bills_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -21,6 +22,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        fetchBill: (id) => dispatch(getBill(id)),
         deleteBill: bill => dispatch(deleteBill(bill)),
         fetchComments: () => dispatch(fetchComments()),
         fetchUsers: () => dispatch(fetchUsers()),
@@ -39,6 +41,10 @@ class FriendShowItem extends React.Component {
 
         this.showBill = this.showBill.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidUpdate() {
+        this.props.fetchBill(this.props.bill.id);
     }
 
     showBill() {
@@ -196,7 +202,6 @@ class FriendShowItem extends React.Component {
                             <form id="comment-form" onSubmit={this.handleSubmit}>
                                 <textarea value={this.state.comment} onChange={this.change("comment")} placeholder="Add a comment"></textarea>
                                 <input id="comment-btn" type="submit" value="Post" />
-                                {/* <button id="comment-btn" type="submit">Post</button> */}
                             </form>
                         </div>
                     </div>
