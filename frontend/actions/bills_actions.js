@@ -2,7 +2,7 @@ import { getBills, getBill, createBill, updateBill, destroyBill } from '../util/
 
 export const RECEIVE_BILLS = 'RECEIVE_BILLS';
 export const RECEIVE_BILL = 'RECEIVE_BILL';
-export const REMOVE_BILL = 'DELETE_BILL';
+export const REMOVE_BILL = 'REMOVE_BILL';
 export const RECEIVE_BILL_PAYLOAD = 'RECEIVE_BILL_PAYLOAD';
 
 const receiveBills = bills => ({

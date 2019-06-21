@@ -2,7 +2,7 @@ import { getPayments, getPayment, createPayment, updatePayment, destroyPayment }
 
 export const RECEIVE_PAYMENTS = 'RECEIVE_PAYMENTS';
 export const RECEIVE_PAYMENT = 'RECEIVE_PAYMENT';
-export const REMOVE_PAYMENT = 'DELETE_PAYMENT';
+export const REMOVE_PAYMENT = 'REMOVE_PAYMENT';
 
 const receivePayments = payments => ({
     type: RECEIVE_PAYMENTS,

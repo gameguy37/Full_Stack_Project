@@ -328,6 +328,7 @@
 }
 
 #friend-show-bill-main {
+    display: flex;
     padding-top: 15px;
 }
 
@@ -358,4 +359,96 @@
 #bill-participant img {
     margin-top: -5px;
     vertical-align: middle;
+}
+
+#comments {
+    width: 264px;
+    display: flex;
+    flex-direction: column;
+}
+
+#comments h4 {
+    margin-top: -6px;
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: #999;
+    line-height: 18px;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#comments textarea {
+    width: 200px;
+    height: auto;
+    display: inline-block;
+    padding: 4px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #555555;
+    font-weight: normal;
+    overflow: auto;
+    vertical-align: top;
+    margin-bottom: 8px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+#comment-btn {
+    font-size: 13px;
+    padding: 3px 6px;
+    background: #ff652f;
+    color: #fff;
+    text-shadow: 0 -1px 0 #c83400;
+    border: 1px solid #cccccc;
+    border-top-color: rgba(0, 0, 0, 0.1);
+    border-right-color: rgba(0, 0, 0, 0.1);
+    border-bottom-color: rgba(0, 0, 0, 0.25);
+    border-left-color: rgba(0, 0, 0, 0.1);
+    line-height: 16px;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    outline: 0;
+    width: 40px;
+}
+
+#comment-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 6px 8px;
+    color: #333333;
+    background: #fff;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: normal;
+}
+
+#comment-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+#author-name {
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+#authored-at {
+    color: #999;
+    font-size: 11px;
 }

@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 import FriendShowItem from './friend_show_item';
-import { fetchBills, fetchBill, newBill, editBill, deleteBill } from '../../actions/bills_actions';
-import { fetchPayments, fetchPayment, newPayment, editPayment, deletePayment } from '../../actions/payments_actions';
+import { fetchBills, newBill } from '../../actions/bills_actions';
+import { fetchComments } from '../../actions/comments_actions';
+import { fetchPayments, newPayment } from '../../actions/payments_actions';
 import { fetchUsers } from '../../actions/users_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,17 +20,12 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return {
         openModal: (modal) => dispatch(openModal(modal)),
-        fetchUsers: () => dispatch(fetchUsers()),
         fetchBills: () => dispatch(fetchBills()),
-        // fetchBill: (id) => dispatch(fetchBill(id)),
-        newBill: (bill) => dispatch(newBill(bill)),
-        // editBill: (bill) => dispatch(editBill(bill)),
-        // deleteBill: (id) => dispatch(deleteBill(id)),
+        fetchComments: () => dispatch(fetchComments()),
         fetchPayments: () => dispatch(fetchPayments()),
-        // fetchPayment: (id) => dispatch(fetchPayment(id)),
+        fetchUsers: () => dispatch(fetchUsers()),
+        newBill: (bill) => dispatch(newBill(bill)),
         newPayment: (payment) => dispatch(newPayment(payment)),
-        // editPayment: (payment) => dispatch(editPayment(payment)),
-        // deletePayment: (id) => dispatch(deletePayment(id)),
     };
 }
 
@@ -46,6 +42,7 @@ class FriendShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchBills();
+        this.props.fetchComments();
         this.props.fetchPayments();
         this.props.fetchUsers();
     }

@@ -1,7 +1,7 @@
 import { createFriendship, destroyFriendship } from '../util/friendships';
 
 export const RECEIVE_FRIENDSHIP = 'RECEIVE_FRIENDSHIP';
-export const DELETE_FRIENDSHIP = 'DELETE_FRIENDSHIP';
+export const REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP';
 
 const receiveFriendship = user => {
     return {
@@ -12,7 +12,7 @@ const receiveFriendship = user => {
 
 const deleteFriendship = user => {
     return {
-        type: DELETE_FRIENDSHIP,
+        type: REMOVE_FRIENDSHIP,
         user
     }
 }
