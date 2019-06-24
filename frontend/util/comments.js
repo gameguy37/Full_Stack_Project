@@ -12,11 +12,11 @@ export const getComment = (id) => {
     });
 };
 
-export const createComment = payload => {
+export const createComment = comment => {
     return $.ajax({
         method: 'POST',
         url: 'api/comments',
-        data: payload
+        data: comment
     });
 };
 

@@ -2,12 +2,11 @@ class Api::CommentsController < ApplicationController
 
     def index
         @comments = Comment.all
-        render json: @comments
+        render :index
     end
 
     def create
         @comment = Comment.new(comment_params)
-        @bill = @comment.bill
         if @comment.save
             render :show
         else

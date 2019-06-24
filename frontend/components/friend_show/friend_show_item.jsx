@@ -63,6 +63,7 @@ class FriendShowItem extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.newComment({ comment: { author_id: this.props.currentUser.id, bill_id: this.props.bill.id, body: this.state.comment } });
+        this.setState({ comment: '' });
     }
 
     render() {
@@ -89,7 +90,7 @@ class FriendShowItem extends React.Component {
                 );
             }
         });
-
+        
         const billComments = Object.values(this.props.comments).map(comment => {
             
             if (comment.bill_id === this.props.bill.id) {
