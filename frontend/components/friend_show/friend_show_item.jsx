@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUsers } from '../../actions/users_actions';
 import { deleteBill } from '../../actions/bills_actions';
-import { fetchComments, newComment } from '../../actions/comments_actions';
+import { fetchComments, newComment, deleteComment } from '../../actions/comments_actions';
 import { fetchBill } from '../../actions/bills_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -22,11 +22,12 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchBill: (id) => dispatch(fetchBill(id)),
+        fetchBill: id => dispatch(fetchBill(id)),
         deleteBill: bill => dispatch(deleteBill(bill)),
         fetchComments: () => dispatch(fetchComments()),
         fetchUsers: () => dispatch(fetchUsers()),
-        newComment: (comment) => dispatch(newComment(comment)),
+        newComment: comment => dispatch(newComment(comment)),
+        deleteComment: id => dispatch(deleteComment(id)),
     }
 }
 

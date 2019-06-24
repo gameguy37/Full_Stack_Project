@@ -34,15 +34,16 @@ class NewUserForm extends React.Component {
         if (this.props.errors.length > 0) {
             const errEle = document.getElementById("session-errors");
             errEle.classList.add('open');
-        }
-
-        return (
-            <ul>
+            return (
+                <ul>
                 {this.props.errors.map( (err, idx) => (
                     <li className="error" key={idx}>{err}</li>
-                ))}
+                    ))}
             </ul>
-        );
+            );
+        } else {
+            return null;
+        }
     }
 
     render() {

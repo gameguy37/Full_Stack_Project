@@ -11,8 +11,9 @@ export default (state = {}, action) => {
         case RECEIVE_COMMENT:
             return merge({}, state, { [action.comment.id]: action.comment });
         case REMOVE_COMMENT:
+            debugger
             let newPaymentsState = merge({}, state);
-            delete newPaymentsState[comment.id];
+            delete newPaymentsState[action.comment.id];
             return newPaymentsState;
         default:
             return state;
