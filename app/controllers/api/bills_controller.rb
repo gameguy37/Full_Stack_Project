@@ -27,11 +27,11 @@ class Api::BillsController < ApplicationController
             @payer_ids.each do |id|
                 Payment.create(bill_id: @bill.id, user_id: id.to_i, initial_amount: @amount_per_slice, paid_amount: 0.00)
             end
-
+            debugger
             @payments = Payment.all.where(bill_id: @bill.id)
 
             @comments = Comment.all.where(bill_id: @bill.id)
-
+            debugger
             @users = []
 
             @payments.each do |payment|

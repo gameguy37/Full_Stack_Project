@@ -17,7 +17,6 @@ export default (state = {}, action) => {
             Object.values(action.payments).forEach(payment => {
                 delete newPaymentsState[payment.id];
             })
-            debugger
             return newPaymentsState;
         default:
             return state;

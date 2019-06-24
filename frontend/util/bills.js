@@ -29,7 +29,6 @@ export const updateBill = payload => {
 };
 
 export const destroyBill = id => {
-
     return $.ajax({
         method: 'DELETE',
         url: `api/bills/${id}`,

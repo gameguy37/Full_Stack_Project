@@ -16,7 +16,6 @@ const receiveComment = comment => ({
 });
 
 const receiveCommentPayload = payload => {
-    debugger
     return {
     type: RECEIVE_COMMENT_PAYLOAD,
     bill: payload.bill,

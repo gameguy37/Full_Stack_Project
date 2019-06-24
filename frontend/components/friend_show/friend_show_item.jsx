@@ -22,7 +22,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchBill: (id) => dispatch(getBill(id)),
+        fetchBill: (id) => dispatch(fetchBill(id)),
         deleteBill: bill => dispatch(deleteBill(bill)),
         fetchComments: () => dispatch(fetchComments()),
         fetchUsers: () => dispatch(fetchUsers()),
@@ -41,10 +41,6 @@ class FriendShowItem extends React.Component {
 
         this.showBill = this.showBill.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    componentDidUpdate() {
-        this.props.fetchBill(this.props.bill.id);
     }
 
     showBill() {

@@ -6,9 +6,8 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create]
     resource :session, only: [:create, :destroy]
     resources :friendships, only: [:create, :destroy]
-    resources :bills, only: [:index, :show, :create, :update, :destroy] do
-      resources :comments, only: [:index, :create, :destroy]
-    end
+    resources :bills, only: [:index, :show, :create, :update, :destroy]
+    resources :comments, only: [:index, :create, :destroy]
     resources :payments, only: [:index, :update, :destroy]
   end
 
