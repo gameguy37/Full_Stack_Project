@@ -14,6 +14,14 @@ class NewUserForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // componentDidMount() {
+    //     this.props.clearSessionErrors();
+    // }
+
+    componentWillUnmount() {
+        this.props.clearSessionErrors();
+    }
+
     change(field) {
         return e => {
             this.setState({ [field]: e.target.value });
@@ -31,15 +39,16 @@ class NewUserForm extends React.Component {
     }
 
     displayErrors() {
+        debugger
+        const errEle = document.getElementById("session-errors");
         if (this.props.errors.length > 0) {
-            const errEle = document.getElementById("session-errors");
             errEle.classList.add('open');
             return (
                 <ul>
-                {this.props.errors.map( (err, idx) => (
-                    <li className="error" key={idx}>{err}</li>
+                    {this.props.errors.map( (err, idx) => (
+                        <li className="error" key={idx}>{err}</li>
                     ))}
-            </ul>
+                </ul>
             );
         } else {
             return null;
