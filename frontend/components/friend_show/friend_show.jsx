@@ -111,7 +111,7 @@ class FriendShow extends React.Component {
                             <span>{pending}</span>
                         </div>
                         <div id="dashboard-topbar-btns">
-                            <a id="add-expense-btn" onClick={() => this.props.openModal('addExpense')} href="#">Add an expense</a>
+                            <a id="add-expense-btn" onClick={() => this.props.openModal('addExpense')}>Add an expense</a>
                         </div>
                     </div>
                     <div id="friend-show-date-bar">

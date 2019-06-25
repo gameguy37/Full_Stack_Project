@@ -221,3 +221,26 @@ a.left-side:hover {
     font-weight: normal;
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+#recent-activity-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 50px;
+    padding-top: 100px;
+}
+
+#recent-activity-box img {
+    height: 200px;
+    width: 200px;
+    border: 1px solid #bbb;
+    border-radius: 100px;
+    vertical-align: middle;
+}
+
+#recent-activity-box span {
+    display: block;
+    width: 100px;
+    margin-right: 80px;
+    text-align: center;
+}

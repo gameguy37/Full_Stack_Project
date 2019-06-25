@@ -6,6 +6,7 @@ import LeftSidebar from '../left_sidebar/left_sidebar_container';
 import RightSidebar from '../right_sidebar/right_sidebar';
 import Dashboard from '../dashboard/dashboard';
 import FriendShow from '../friend_show/friend_show';
+import RecentActivity from '../recent_activity/recent_activity';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -29,6 +30,7 @@ class NavBar extends React.Component {
                     <Switch>
                         <ProtectedRoute exact path="/dashboard" component={Dashboard} />
                         <ProtectedRoute path="/friends/:friendId" component={FriendShow} />
+                        <ProtectedRoute exact path="/recent" component={RecentActivity} />
                     </Switch>
                 </section>
                 <section id="right-sidebar">

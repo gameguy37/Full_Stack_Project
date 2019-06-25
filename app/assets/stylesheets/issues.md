@@ -1,11 +1,12 @@
 autofocus fields
-splash page words collapse
+splash page responsive design
+center box stops at bottom: 0 instead of filling page
+Logout user dropdown
 
-hover over a shared bill turns gray
-edit expense
+
 pending friendships need to resolve when friends are friends
 delete friend gear button
-Logout user dropdown
+edit expense
 change delete buttons to "X"
-center box stops at bottom: 0 instead of filling page
 style split expense modal
+all expenses

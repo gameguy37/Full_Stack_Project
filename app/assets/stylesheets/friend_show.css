@@ -76,6 +76,11 @@
 
 #friend-show-item:hover {
     cursor: pointer;
+    background: #f8f8f8;
+}
+
+#friend-show-item:hover #description {
+    text-decoration: underline;
 }
 
 #friend-show-left {

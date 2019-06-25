@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
     return {
@@ -22,7 +23,8 @@ class RecentActivity extends React.Component {
         return (
             <>
                 <div id="recent-activity-box">
-                    Recent
+                    <img src={window.profilePic} />
+                    <span>Feature Coming Soon!</span>
                 </div>
             </>
         );
