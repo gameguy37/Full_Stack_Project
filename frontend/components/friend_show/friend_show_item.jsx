@@ -42,6 +42,7 @@ class FriendShowItem extends React.Component {
 
         this.showBill = this.showBill.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     showBill() {
@@ -65,6 +66,12 @@ class FriendShowItem extends React.Component {
         e.preventDefault();
         this.props.newComment({ comment: { author_id: this.props.currentUser.id, bill_id: this.props.bill.id, body: this.state.comment } });
         this.setState({ comment: '' });
+    }
+
+    handleDelete(e) {
+        e.stopPropagation();
+        debugger
+        this.props.deleteBill(this.props.bill.id);
     }
 
     render() {
@@ -165,7 +172,7 @@ class FriendShowItem extends React.Component {
                         </div>
                     </div>
                     <div id="friend-show-delete">
-                        <button onClick={() => this.props.deleteBill(this.props.bill.id)}>Delete</button>
+                        <button onClick={this.handleDelete}>Delete</button>
                     </div>
                 </div>
                 <div id={this.props.bill.id} className="hide-bill friend-show-bill">

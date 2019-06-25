@@ -10,3 +10,4 @@ edit expense
 change delete buttons to "X"
 style split expense modal
 all expenses
+date expense added just says june 5

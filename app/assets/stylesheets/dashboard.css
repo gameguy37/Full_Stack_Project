@@ -23,10 +23,6 @@
     color: #333333;
 }
 
-#dashboard-topbar-btns {
-
-}
-
 #add-expense-btn {
     border: 1px solid #cccccc;
     vertical-align: middle;
@@ -51,6 +47,22 @@
     background-color: #ff5216;
     text-decoration: none;
     color: #fff;
+}
+
+#expense-error {
+    color: #d64922;
+    width: 250px;
+    overflow-wrap: normal;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.hidden-expense-error {
+    display: none;
+}
+
+.show-expense-error {
+    display: block;
 }
 
 #dashboard-balances-bar {

@@ -14,10 +14,6 @@ class NewUserForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.clearSessionErrors();
-    // }
-
     componentWillUnmount() {
         this.props.clearSessionErrors();
     }
@@ -38,27 +34,16 @@ class NewUserForm extends React.Component {
         this.props.signup(this.state);
     }
 
-    displayErrors() {
-        debugger
-        const errEle = document.getElementById("session-errors");
-        if (this.props.errors.length > 0) {
-            errEle.classList.add('open');
-            return (
-                <ul>
-                    {this.props.errors.map( (err, idx) => (
-                        <li className="error" key={idx}>{err}</li>
-                    ))}
-                </ul>
-            );
-        } else {
-            return null;
-        }
-    }
-
     render() {
         return (
             <>
-            <div id="session-errors">{this.displayErrors()}</div>
+            <div id="session-errors" className={this.props.errors.length > 0 ? "open" : ""}>
+                <ul>
+                    {this.props.errors.map((err, idx) => (
+                        <li className="error" key={idx}>{err}</li>
+                    ))}
+                </ul>
+            </div>
             <div id="signup-box">
                 <section id="signup-image"><img src={window.logo} height="200px" /></section>
                 <form id="signup-form" onSubmit={this.handleSubmit}>

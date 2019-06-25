@@ -45,9 +45,14 @@ export default class AddExpense extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        if (this.state.amount.split('.').length <= 2) {
-            this.props.newBill({ bill: { total_amount: this.state.amount, description: "default", category: "default" }, payment: { payer_ids: this.state.payerIds, self_checked: this.state.selfChecked } });
-            this.props.closeModal();
+        if (this.state.selfChecked === true && this.state.payerIds.length === 0) {
+            const err = document.getElementById("expense-error");
+            err.classList.toggle('show-expense-error');
+        } else {
+            if (this.state.amount.split('.').length <= 2) {
+                this.props.newBill({ bill: { total_amount: this.state.amount, description: "default", category: "default" }, payment: { payer_ids: this.state.payerIds, self_checked: this.state.selfChecked } });
+                this.props.closeModal();
+            }
         }
     }
 
@@ -75,6 +80,7 @@ export default class AddExpense extends React.Component {
                 <h1>Choose friends to split expense:</h1>
                 <br/>
                 <br/>
+                <span id="expense-error" className="hidden-expense-error">You cannot create an expense shared with only yourself</span>
                 <form onSubmit= {this.handleSubmit}>
                     <input type="text" value={this.state.amount} onChange={this.change("amount")} placeholder="Enter an amount" />
                     <br/>
