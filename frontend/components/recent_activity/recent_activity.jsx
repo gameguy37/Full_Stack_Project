@@ -23,7 +23,7 @@ class RecentActivity extends React.Component {
         return (
             <>
                 <div id="recent-activity-box">
-                    <img src={window.profilePic} />
+                    <img src={window.emptyTable} />
                     <span>Feature Coming Soon!</span>
                 </div>
             </>

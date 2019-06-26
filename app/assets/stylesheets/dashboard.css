@@ -243,10 +243,7 @@ a.left-side:hover {
 }
 
 #recent-activity-box img {
-    height: 200px;
     width: 200px;
-    border: 1px solid #bbb;
-    border-radius: 100px;
     vertical-align: middle;
 }
 

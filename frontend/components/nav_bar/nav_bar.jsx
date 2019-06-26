@@ -31,6 +31,7 @@ class NavBar extends React.Component {
                         <ProtectedRoute exact path="/dashboard" component={Dashboard} />
                         <ProtectedRoute path="/friends/:friendId" component={FriendShow} />
                         <ProtectedRoute exact path="/recent" component={RecentActivity} />
+                        <ProtectedRoute exact path="/all" component={RecentActivity} />
                     </Switch>
                 </section>
                 <section id="right-sidebar">
