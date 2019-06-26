@@ -29,6 +29,7 @@
 
 .nav-user-dropdown:hover {
     background: #48be9d;
+    cursor: pointer;
 }
 
 .nav-user-dropdown img {
