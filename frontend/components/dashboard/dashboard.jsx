@@ -71,7 +71,7 @@ class Dashboard extends React.Component {
             if (self.props.currentUser.paymentIds.length === 0) {
                 self.props.currentUser.paidBillIds.forEach( billId => {
                     Object.values(self.props.payments).forEach( payment => {
-                        if ((payment.user_id === user.id) && (payment.bill_id === billId)) {
+                        if ((payment.user_id === user.id) && (payment.bill_id === billId) && (self.props.currentUser.acceptedFriendIds.includes(user.id) || self.props.currentUser.pendingFriendIds.includes(user.id))) {
                             userIsOwedTotal += payment.initial_amount - payment.paid_amount;
                         }
                     })
@@ -79,7 +79,7 @@ class Dashboard extends React.Component {
             } else if (self.props.currentUser.paidBillIds.length === 0) {
                 Object.values(self.props.payments).forEach(payment => {
                     Object.values(self.props.bills).forEach(bill => {
-                        if ((payment.user_id === self.props.currentUser.id) && (bill.biller_id === user.id)) {
+                        if ((payment.user_id === self.props.currentUser.id) && (bill.biller_id === user.id) && (self.props.currentUser.acceptedFriendIds.includes(user.id) || self.props.currentUser.pendingFriendIds.includes(user.id))) {
                             userOwesTotal += payment.initial_amount - payment.paid_amount;
                         }
                     })
@@ -87,20 +87,26 @@ class Dashboard extends React.Component {
             } else {
                 Object.values(self.props.payments).forEach( payment => {
                     self.props.currentUser.paidBillIds.forEach( billId => {
-                        if ((payment.user_id === user.id) && (payment.bill_id === billId) && (self.props.currentUser.paidBillIds.includes(billId))) {
+                        if ((payment.user_id === user.id) && (payment.bill_id === billId) && (self.props.currentUser.paidBillIds.includes(billId)) && (self.props.currentUser.acceptedFriendIds.includes(user.id) || self.props.currentUser.pendingFriendIds.includes(user.id))) {
                             userIsOwedTotal += payment.initial_amount - payment.paid_amount;
                         }
                     })
                     user.paidBillIds.forEach( billId => {
-                        if ((payment.user_id === self.props.currentUser.id) && (payment.bill_id === billId) && (user.paidBillIds.includes(billId))) {
+                        if ((payment.user_id === self.props.currentUser.id) && (payment.bill_id === billId) && (user.paidBillIds.includes(billId)) && (self.props.currentUser.acceptedFriendIds.includes(user.id) || self.props.currentUser.pendingFriendIds.includes(user.id))) {
                             userOwesTotal += payment.initial_amount - payment.paid_amount;
                         }
                     })
                 })
             }
-           
-            totalBalanceUserIsOwed += userIsOwedTotal;
-            totalBalanceUserOwes += userOwesTotal;
+
+            if (userIsOwedTotal - userOwesTotal < 0) {
+                totalBalanceUserOwes += (userOwesTotal - userIsOwedTotal);
+            }
+
+            if (userIsOwedTotal - userOwesTotal > 0) {
+                totalBalanceUserIsOwed += (userIsOwedTotal - userOwesTotal);
+            }
+            
 
             if (((userIsOwedTotal - userOwesTotal) < 0) && (self.props.currentUser.acceptedFriendIds.includes(user.id) || self.props.currentUser.pendingFriendIds.includes(user.id))) {
                 friendsWhoAreOwed = friendsWhoAreOwed.concat(<DashboardItem key={user.id} friendId={user.id} amount={Math.abs(userIsOwedTotal - userOwesTotal).toFixed(2)} className="left-side" />);
