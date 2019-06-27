@@ -19,7 +19,7 @@ export default class AddExpense extends React.Component {
 
     change(field) {
         return e => {
-            if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."].includes(e.nativeEvent.data)) {
+            if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", null].includes(e.nativeEvent.data)) {
                 this.setState({ [field]: e.target.value });
             }
         };
