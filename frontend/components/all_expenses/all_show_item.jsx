@@ -80,7 +80,7 @@ class AllShowItem extends React.Component {
 
         let whoLentWho;
         if (this.props.friend && this.props.className === "x-owes-you") {
-            whoLentWho = this.props.friend.name + " owes you"
+            whoLentWho = this.props.friend.name + "you are owed"
         } else if (this.props.friend && this.props.className === "you-owe-x") {
             whoLentWho = "you owe " + this.props.friend.name
         } else {

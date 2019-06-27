@@ -9,3 +9,4 @@ edit expense
 change delete buttons to "X"
 style split expense modal
 date expense added should be dependent on created at
+handle trying to add expense without any friends
