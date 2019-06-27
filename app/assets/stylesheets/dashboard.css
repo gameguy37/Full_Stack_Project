@@ -253,3 +253,8 @@ a.left-side:hover {
     margin-right: 80px;
     text-align: center;
 }
+
+#checkbox-user-name {
+    margin-left: 8px;
+    vertical-align: middle;
+}

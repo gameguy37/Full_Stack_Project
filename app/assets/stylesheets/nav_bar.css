@@ -303,4 +303,5 @@
 .create-bill-btn {
     border-radius: 5px;
     border: 1px solid #999;
+    margin: 0 auto;
 }

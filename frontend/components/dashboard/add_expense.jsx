@@ -49,9 +49,12 @@ export default class AddExpense extends React.Component {
             const err = document.getElementById("expense-error");
             err.classList.toggle('show-expense-error');
         } else {
-            if (this.state.amount.split('.').length <= 2) {
-                this.props.newBill({ bill: { total_amount: this.state.amount, description: "default", category: "default" }, payment: { payer_ids: this.state.payerIds, self_checked: this.state.selfChecked } });
-                this.props.closeModal();
+            if (this.state.amount !== '') {
+                if ((this.state.amount.split('.').length <= 2) && (this.state.payerIds.length > 0)) {
+                    debugger
+                    this.props.newBill({ bill: { total_amount: this.state.amount, description: "default", category: "default" }, payment: { payer_ids: this.state.payerIds, self_checked: this.state.selfChecked } });
+                    this.props.closeModal();
+                }
             }
         }
     }
@@ -68,7 +71,7 @@ export default class AddExpense extends React.Component {
                     <li key={user.id}>
                         <label>
                             <Checkbox name={user.id} checked={this.state.checked} handlechange={this.handleCheckboxChange} />
-                            <span>{user.name}</span>
+                            <span id="checkbox-user-name">{user.name}</span>
                         </label>
                     </li>
                 );
@@ -88,7 +91,7 @@ export default class AddExpense extends React.Component {
                     <ul>
                         <label>
                         <input type="checkbox" onChange={this.checkChange1} value={this.state.selfChecked} />
-                        Myself</label>
+                            <span id="checkbox-user-name">Myself</span></label>
                         <br/>
                         {allFriends}
                     </ul>
