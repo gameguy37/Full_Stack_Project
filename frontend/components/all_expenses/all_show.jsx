@@ -37,6 +37,7 @@ class AllShow extends React.Component {
             ui: { modal: null },
         };
 
+        this.handleAddExpense = this.handleAddExpense.bind(this);
     }
 
     componentDidMount() {
@@ -44,6 +45,15 @@ class AllShow extends React.Component {
         this.props.fetchComments();
         this.props.fetchPayments();
         this.props.fetchUsers();
+    }
+
+    handleAddExpense() {
+        let allFriends = this.props.currentUser.acceptedFriendIds.concat(this.props.currentUser.pendingFriendIds);
+        if (allFriends.length === 0) {
+            alert("You must add at least one friend before expenses can be split.");
+        } else {
+            this.props.openModal('addExpense');
+        }
     }
 
     render() {
@@ -95,9 +105,10 @@ class AllShow extends React.Component {
                     <div id="dashboard-topbar">
                         <div id="username-friendship-flex">
                             <img src={window.profilePic}></img>
+                            <h1>All Expenses</h1>
                         </div>
                         <div id="dashboard-topbar-btns">
-                            <a id="add-expense-btn" onClick={() => this.props.openModal('addExpense')}>Add an expense</a>
+                            <a id="add-expense-btn" onClick={this.handleAddExpense}>Add an expense</a>
                         </div>
                     </div>
                     <div id="friend-show-date-bar">

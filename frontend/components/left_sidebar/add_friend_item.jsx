@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addFriend } from '../../actions/friendship_actions';
 import { closeModal } from '../../actions/modal_actions';
 
-const mapStateToProps = (ownProps) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         friend: ownProps.friend
     }
@@ -20,6 +20,7 @@ const AddFriendItem = (props) => {
     if (!props.friend) {
         return null;
     }
+
     return (
         <li className="add-friend-flex">{props.friend.name}<form onSubmit={() => props.closeModal()}><input onClick={() => props.addFriend(props.friend)} className="add-friend-btn" type="submit" value="Add Friend!"></input></form></li>
     );

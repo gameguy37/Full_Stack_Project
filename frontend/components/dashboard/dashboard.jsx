@@ -36,7 +36,7 @@ class Dashboard extends React.Component {
         this.state = {
             ui: { modal: null },
         };
-
+        this.handleAddExpense = this.handleAddExpense.bind(this);
     }
 
     componentDidMount() {
@@ -44,6 +44,15 @@ class Dashboard extends React.Component {
         this.props.fetchComments();
         this.props.fetchPayments();
         this.props.fetchUsers();
+    }
+
+    handleAddExpense() {
+        let allFriends = this.props.currentUser.acceptedFriendIds.concat(this.props.currentUser.pendingFriendIds);
+        if (allFriends.length === 0) {
+            alert("You must add at least one friend before expenses can be split.");
+        } else {
+            this.props.openModal('addExpense');
+        }
     }
 
     render() {
@@ -118,7 +127,7 @@ class Dashboard extends React.Component {
                     <div id="dashboard-topbar">
                         <h1>Dashboard</h1>
                         <div id="dashboard-topbar-btns">
-                            <span id="add-expense-btn" onClick={() => this.props.openModal('addExpense')} >Add an expense</span>
+                            <span id="add-expense-btn" onClick={this.handleAddExpense} >Add an expense</span>
                         </div>
                     </div>
                     <div id="dashboard-balances-bar">

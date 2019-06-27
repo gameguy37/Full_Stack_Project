@@ -2,11 +2,11 @@ autofocus fields
 splash page responsive design
 center box stops at bottom: 0 instead of filling page
 Logout user dropdown
+bill title shouldh have message icon next to it when messages exist
+date expense added should be dependent on created at
 
 
 pending friendships need to resolve when friends are friends
 edit expense
 change delete buttons to "X"
 style split expense modal
-date expense added should be dependent on created at
-handle trying to add expense without any friends
