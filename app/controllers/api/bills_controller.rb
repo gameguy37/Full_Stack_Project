@@ -22,7 +22,7 @@ class Api::BillsController < ApplicationController
                 @slices = @payer_ids.length
             end
 
-            @amount_per_slice = (bill_params[:total_amount].to_i / @slices)
+            @amount_per_slice = (bill_params[:total_amount].to_f / @slices).round(2)
         
             @payer_ids.each do |id|
                 Payment.create(bill_id: @bill.id, user_id: id.to_i, initial_amount: @amount_per_slice, paid_amount: 0.00)

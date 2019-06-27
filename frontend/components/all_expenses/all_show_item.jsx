@@ -7,8 +7,8 @@ import { fetchBill } from '../../actions/bills_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        friendId: ownProps.friendId,
-        friend: state.entities.users[ownProps.friendId],
+        friendId: ownProps.payment.user_id,
+        friend: state.entities.users[ownProps.payment.user_id],
         amount: ownProps.amount,
         className: ownProps.className,
         bill: ownProps.bill,
@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-class FriendShowItem extends React.Component {
+class AllShowItem extends React.Component {
 
     constructor(props) {
         super(props);
@@ -129,7 +129,7 @@ class FriendShowItem extends React.Component {
         let friendName;
         let billAmount;
 
-        if (this.props.bill && this.props.payment && this.props.friend && (this.props.payment.bill_id === this.props.bill.id) && (this.props.payment.user_id === this.props.friendId) && (this.props.bill.biller_id === this.props.currentUser.id)) {
+        if (this.props.bill && this.props.payment && this.props.friend && (this.props.payment.bill_id === this.props.bill.id) && (this.props.bill.biller_id === this.props.currentUser.id)) {
             owedAmount = (parseFloat(this.props.payment.initial_amount - this.props.payment.paid_amount)).toFixed(2);
             reactiveId = "green";
             description = this.props.bill.description;
@@ -137,7 +137,7 @@ class FriendShowItem extends React.Component {
             billAmount = (parseFloat(this.props.bill.total_amount)).toFixed(2);
         }
 
-        if (this.props.bill && this.props.payment && this.props.friend && (this.props.payment.bill_id === this.props.bill.id) && (this.props.bill.biller_id === this.props.friendId) && (this.props.payment.user_id === this.props.currentUser.id)) {
+        if (this.props.bill && this.props.payment && this.props.friend && (this.props.payment.bill_id === this.props.bill.id) && (this.props.payment.user_id === this.props.currentUser.id)) {
             owedAmount = (parseFloat(this.props.payment.initial_amount - this.props.payment.paid_amount)).toFixed(2);
             reactiveId = "orange";
             description = this.props.bill.description;
@@ -215,4 +215,4 @@ class FriendShowItem extends React.Component {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FriendShowItem);
+export default connect(mapStateToProps, mapDispatchToProps)(AllShowItem);

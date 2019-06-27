@@ -16,7 +16,7 @@ class RightSidebar extends React.Component {
             <>
                 <div id="right-sidebar-box">
                     <Switch>
-                        <ProtectedRoute exact path="/all" component={RightSidebarAds} />
+                        <ProtectedRoute exact path="/all" component={RightSidebarAll} />
                         <ProtectedRoute path="/friends/:friendId" component={RightSidebarFriend} />
                         <ProtectedRoute path="/" component={RightSidebarAds} />
                     </Switch>

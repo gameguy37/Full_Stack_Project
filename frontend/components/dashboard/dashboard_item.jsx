@@ -11,9 +11,6 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const DashboardItem = (props) => {
-    // if (!props.friend) {
-    //     return null;
-    // }
 
     let balanceDescription;
     if (props.className === "left-side") {

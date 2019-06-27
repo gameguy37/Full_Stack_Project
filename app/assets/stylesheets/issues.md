@@ -5,9 +5,7 @@ Logout user dropdown
 
 
 pending friendships need to resolve when friends are friends
-delete friend gear button
 edit expense
 change delete buttons to "X"
 style split expense modal
-all expenses
-date expense added just says june 5
+date expense added should be dependent on created at

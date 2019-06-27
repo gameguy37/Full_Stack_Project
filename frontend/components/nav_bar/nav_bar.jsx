@@ -6,6 +6,7 @@ import LeftSidebar from '../left_sidebar/left_sidebar_container';
 import RightSidebar from '../right_sidebar/right_sidebar';
 import Dashboard from '../dashboard/dashboard';
 import FriendShow from '../friend_show/friend_show';
+import AllShow from '../all_expenses/all_show';
 import RecentActivity from '../recent_activity/recent_activity';
 
 class NavBar extends React.Component {
@@ -19,7 +20,8 @@ class NavBar extends React.Component {
                 <header className="nav-bar">
                     <div className="nav-div">
                         <span className="nav-styled-name">GODUTCH</span>
-                        <span onClick={this.props.logout} className="nav-user-dropdown"><img src={window.profilePic} />Logout {this.props.user.name} <b className="caret" /></span>
+                        {/* <span onClick={this.props.logout} className="nav-user-dropdown"><img src={window.profilePic} />Logout {this.props.user.name} <b className="caret" /></span> */}
+                        <span onClick={this.props.logout} className="nav-user-dropdown"><img src={window.profilePic} />Logout {this.props.user.name}</span>
                     </div>
                 </header>
                 <br/>
@@ -31,7 +33,7 @@ class NavBar extends React.Component {
                         <ProtectedRoute exact path="/dashboard" component={Dashboard} />
                         <ProtectedRoute path="/friends/:friendId" component={FriendShow} />
                         <ProtectedRoute exact path="/recent" component={RecentActivity} />
-                        <ProtectedRoute exact path="/all" component={RecentActivity} />
+                        <ProtectedRoute exact path="/all" component={AllShow} />
                     </Switch>
                 </section>
                 <section id="right-sidebar">

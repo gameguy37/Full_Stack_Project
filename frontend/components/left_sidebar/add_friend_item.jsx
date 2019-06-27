@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addFriend } from '../../actions/friendship_actions';
 import { closeModal } from '../../actions/modal_actions';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (ownProps) => {
     return {
         friend: ownProps.friend
     }
@@ -15,12 +15,6 @@ const mapDispatchToProps = dispatch => {
         closeModal: () => dispatch(closeModal())
     }
 }
-
-// const handleSubmit = () => {
-//     addFriend();
-//     closeModal();
-
-// }
 
 const AddFriendItem = (props) => {
     if (!props.friend) {
