@@ -36,6 +36,7 @@ class Dashboard extends React.Component {
         this.state = {
             ui: { modal: null },
         };
+
         this.handleAddExpense = this.handleAddExpense.bind(this);
     }
 
@@ -101,11 +102,11 @@ class Dashboard extends React.Component {
             totalBalanceUserIsOwed += userIsOwedTotal;
             totalBalanceUserOwes += userOwesTotal;
 
-            if ((userIsOwedTotal - userOwesTotal) < 0) {
+            if (((userIsOwedTotal - userOwesTotal) < 0) && (self.props.currentUser.acceptedFriendIds.includes(user.id) || self.props.currentUser.pendingFriendIds.includes(user.id))) {
                 friendsWhoAreOwed = friendsWhoAreOwed.concat(<DashboardItem key={user.id} friendId={user.id} amount={Math.abs(userIsOwedTotal - userOwesTotal).toFixed(2)} className="left-side" />);
             }
 
-            if ((userIsOwedTotal - userOwesTotal) > 0) {
+            if (((userIsOwedTotal - userOwesTotal) > 0) && (self.props.currentUser.acceptedFriendIds.includes(user.id) || self.props.currentUser.pendingFriendIds.includes(user.id))) {
                 friendsWhoOwe = friendsWhoOwe.concat(<DashboardItem key={user.id} friendId={user.id} amount={Math.abs(userIsOwedTotal - userOwesTotal).toFixed(2)} className="right-side" />);
             }
 
