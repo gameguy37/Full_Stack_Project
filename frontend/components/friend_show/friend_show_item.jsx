@@ -70,7 +70,11 @@ class FriendShowItem extends React.Component {
 
     handleDelete(e) {
         e.stopPropagation();
-        this.props.deleteBill(this.props.bill.id);
+        if (confirm("Are you sure you want to delete this expense? This will completely remove this expense for ALL people involved, not just you.")) {
+            this.props.deleteBill(this.props.bill.id);
+        } else {
+            return false;
+        }
     }
 
     render() {
