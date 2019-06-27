@@ -51,7 +51,6 @@ export default class AddExpense extends React.Component {
         } else {
             if (this.state.amount !== '') {
                 if ((this.state.amount.split('.').length <= 2) && (this.state.payerIds.length > 0)) {
-                    debugger
                     this.props.newBill({ bill: { total_amount: this.state.amount, description: "default", category: "default" }, payment: { payer_ids: this.state.payerIds, self_checked: this.state.selfChecked } });
                     this.props.closeModal();
                 }
