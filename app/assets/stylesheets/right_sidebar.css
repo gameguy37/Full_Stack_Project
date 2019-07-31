@@ -86,6 +86,7 @@
 
 #delete-friend-btn {
     margin-top: 16px;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #rs-friend-settings-btn:hover {
