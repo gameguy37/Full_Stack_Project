@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(<Root store={store} />, root);
 
     //FOR TESTING ONLY
-    window.store = store;
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
-    window.login = login;
-    window.logout = logout;
-    window.createFriendship = createFriendship;
+    // window.store = store;
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
+    // window.login = login;
+    // window.logout = logout;
+    // window.createFriendship = createFriendship;
     //BE SURE TO REMOVE
 
 });
