@@ -19,7 +19,7 @@ const FriendListItem = (props) => {
         return null;
     }
     return (
-        <NavLink to={`/friends/${props.user.id}`} className="friend"><li><i className="icon-user" height="18px"></i> {props.user.name}</li></NavLink>
+        <NavLink to={`/friends/${props.user.id}`} className="friend"><li><i className="fas fa-user" height="18px"></i> {props.user.name}</li></NavLink>
     );
 };
 

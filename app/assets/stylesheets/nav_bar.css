@@ -229,6 +229,7 @@
     text-align: left;
     border-left: 6px solid #fff;
     font-weight: 400;
+    text-decoration: none;
 }
 
 .friend li {
@@ -243,17 +244,17 @@
     color: rgb(153, 153, 153);
 }
 
-.icon-user::before {
+.fa-user::before {
     margin-top: 2px;
     margin-right: 2px;
 }
 
-.icon-list::before {
+.fa-list::before {
     margin-top: 2px;
     margin-right: 1px;
 }
 
-.icon-flag::before {
+.fa-flag::before {
     width: 16px;
     margin-right: 1px;
     margin-left: 1px;
