@@ -47,7 +47,7 @@ class LoginForm extends React.Component {
                             <br />
                             <input type="password" value={this.state.password} onChange={this.change("password")} placeholder="Password" />
                             <br />
-                            <input className="dropdown-login-btn" type="submit" value="Log in to Splitwise" />
+                            <input className="dropdown-login-btn" type="submit" value="Log in to goDutch" />
                         </form>
                         <form onSubmit={this.handleSubmit2}>
                             <input className="dropdown-demo-login-btn" type="submit" value="Demo Login" />
